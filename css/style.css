@@ -1,0 +1,1782 @@
+@import url("https://fonts.googleapis.com/css?family=Pontano+Sans|Teko&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Passion+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Squada+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
+/*start BLOG*/
+
+/*[data-design="optionOne"][data-section="blogSection"] .post,
+[data-design="optionOne"] [data-section="blogSection"] h1 {
+  color: #000 !important;
+}
+
+[data-design="optionTwo"][data-section="blogSection"] .post,
+[data-design="optionTwo"] [data-section="blogSection"] h1,
+[data-design="optionTwo"] [data-section="blogSection"] i,
+[data-design="optionTwo"] [data-section="blogSection"] [data-content] {
+  color: #fff !important;
+}*/
+
+.post [data-content] {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*End blog*/
+
+body[data-design="optionOne"] {
+    margin: 0;
+    font-family: "Pontano Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body[data-design="optionOne"],
+.editMode h3 {
+    color: #404040 !important;
+}
+
+input[type="text"],
+textarea.form-control,
+.btn,
+select.form-control,
+.form-control {
+    border-radius: 0px;
+}
+
+.block {
+    display: block;
+}
+
+.quill {
+    background-color: #fff;
+}
+
+.error {
+    border: #ff0000 1px solid;
+}
+
+.ql-editor {
+    min-height: 150px;
+    cursor: default;
+    color: #000;
+}
+
+.showAt768 {
+    display: none;
+}
+
+.img-thumbnail {
+    border: none;
+    width: 100%;
+}
+
+[data-design="optionOne"] h1,
+[data-design="optionOne"] h2,
+[data-design="optionOne"] h3,
+[data-design="optionOne"] h4,
+[data-design="optionOne"] h5 {
+    font-family: "Teko", sans-serif;
+}
+
+[data-design="optionOne"] .img-thumbnail {
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.fa-search-plus {
+    font-size: 30px;
+}
+
+ul.noStyle {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+ul.noStyle li {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#top ul.inline li a i,
+#top ul.inline li i {
+    padding-right: 5px;
+    text-align: center;
+}
+
+.topNavSocial {
+    text-align: right;
+}
+
+.pull-right {
+    float: right;
+}
+
+#backToTop {
+    cursor: pointer;
+    top: 65%;
+    left: 0px;
+    padding-left: 9px;
+    padding-right: 7px;
+    position: fixed;
+    z-index: 99999;
+    font-size: 25px;
+    color: #fff;
+    background-color: #333;
+    border: 1px #333 solid;
+}
+
+#backToTop:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+.hide,
+.card.hide {
+    display: none;
+}
+
+.center {
+    margin: auto;
+}
+
+/*start loader animation*/
+.loader {
+    border: 16px solid #fff;
+    border-radius: 50%;
+    border-top: 16px solid #333;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*end loader animation*/
+
+.redBorder {
+    border: 4px #ff0000 solid;
+}
+
+.teaser .img-thumbnail {
+    min-height: 255px;
+    max-height: 255px;
+    overflow: hidden;
+}
+
+.nav-item .nav-link {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-family: Teko, sans-serif;
+}
+
+.lead.lightTxt+div.row .nav-item a {
+    color: #fff;
+}
+
+.lead.darkTxt+div.row .nav-item a {
+    color: #000;
+}
+
+.img-thumbnail img {
+    height: 255px;
+    width: auto;
+    overflow: hidden;
+}
+
+.teaser .img-thumbnail {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.teaser .img-thumbnail:hover {
+    -webkit-filter: grayscale(0%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+.focusTeaser {
+    z-index: 2;
+    color: #fff;
+    background-color: transparent;
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/darkBg.png);
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.jumbotron {
+    /*background: url(img/backgrounds/clouds.jpg) no-repeat center center fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -100px;
+    color: #fff;
+    border-radius: 0px;
+}
+
+/* Glyph, by Harry Roberts */
+
+[data-design="optionOne"] h2+hr {
+    overflow: visible;
+    /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+[data-design="optionOne"] h2+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+
+[data-design="optionOne"] [data-section]:nth-child(even) h2+hr:after {
+    background-color: #e8e6dd;
+}
+
+[data-design="optionOne"] [data-section]:nth-child(odd) h2+hr:after {
+    background-color: #fff;
+}
+
+[data-toggle="modal"],
+.editMode,
+#editMode,
+.teaser,
+.pointer {
+    cursor: pointer;
+}
+
+.centerAuto {
+    margin: auto;
+    width: 100%;
+}
+
+.txtCenter {
+    text-align: center;
+}
+
+span.input-group-btn .btn {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+h5.modal-title {
+    color: #000 !important;
+}
+
+#galleryModal .modal-body img,
+.map {
+    width: 100%;
+    height: auto;
+}
+
+#galleryModal .btn {
+    border-radius: 0px;
+}
+
+.map {
+    border: 0px;
+    min-height: 315px;
+}
+
+.col-md-12 iframe.mediaComponent {
+    width: 100%;
+    min-height: 600px;
+}
+
+.col-md-6 iframe.mediaComponent {
+    width: 100%;
+    min-height: 363px;
+}
+
+.col-md-4 iframe.mediaComponent {
+    width: 100%;
+    min-height: 236px;
+}
+
+.col-md-3 iframe.mediaComponent {
+    width: 100%;
+    height: 175px;
+}
+
+img.mediaComponent {
+    width: 100%;
+    height: auto;
+}
+
+[data-design="optionOne"] div[data-section="listSection"] button.list-group-item {
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0px;
+}
+
+[data-design="optionOne"] div[data-section="listSection"] button.list-group-item:hover {
+    background-color: #f8f8f8;
+}
+
+[data-design="optionOne"] div[data-section="listSection"] button.list-group-item.active {
+    background-color: #999;
+    color: #fff;
+}
+
+div[data-section="listSection"] a[href] {
+    text-decoration: underline;
+}
+
+ul.numbered li {
+    list-style-type: decimal;
+}
+
+ul.inline li {
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.contactNav {
+    font-size: 12px !important;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.contactNav li .fas {
+    padding-right: 10px;
+}
+
+[data-design="optionOne"] div.shadow-sm,
+[data-design="optionOne"] #top nav i[class*="fa-"],
+[data-design="optionOne"] .shadow-sm .btn-outline-primary,
+[data-design="optionOne"] a[href].mailLink,
+[data-design="optionOne"] a[href].mailLink:visited {
+    color: #fff;
+}
+
+/*[data-design="optionOne"] #top nav i[class*="fa-"]:hover {
+  color: #6c757d;
+}*/
+
+[data-design="optionOne"] .moveUp {
+    margin-top: -130px;
+}
+
+.editMode {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #ffe6e6;
+    border: 1px solid #990000;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    color: #000;
+}
+
+/*[data-design="optionOne"] .jumbotron {
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -100px;
+  color: #fff;
+  border-radius: 0px;
+}*/
+
+h1.jumbotron-heading.lightTxt,
+p.lead.lightTxt {
+    color: #fff !important;
+}
+
+h1.jumbotron-heading.darkTxt,
+p.lead.darkTxt {
+    color: #000 !important;
+}
+
+/*start main focus*/
+
+[data-design="optionOne"] .mainFocusBg {
+    background-color: #f8f9fa;
+
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/option1Bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /**/
+}
+
+.mainTease {
+    position: absolute;
+    z-index: 2;
+    color: #333;
+    background-color: transparent;
+    background-image: url(img/backgrounds/beigeBg.png);
+    background-repeat: repeat;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    top: 50%;
+    bottom: 0px;
+}
+
+.mainTease h5 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.mainTease p {
+    font-size: 0.8rem;
+    line-height: 15px;
+}
+
+/*[data-design="optionOne"] .focusTeaser {
+  z-index: 2;
+  color: #fff;
+  background-color: transparent;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/darkBg.png);
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  box-shadow: 0 8px 6px -6px black;
+}*/
+
+[data-design="optionOne"] .focusTeaser h1 {
+    margin-top: 40%;
+    text-align: center;
+}
+
+/*end main focus*/
+
+/*start secondary css */
+ul.videoindexParent {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+.focusMagnifier {
+    padding-top: 7%;
+    left: 30px;
+    z-index: 2;
+    color: #fff;
+
+    /*background-image: url(img/backgrounds/purpleBg.png);
+  background-repeat: repeat;*/
+    opacity: 0.5;
+    position: absolute;
+    width: 97%;
+    height: 97%;
+
+    cursor: pointer;
+}
+
+.focusMagnifier:hover {
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    /* ...and now for the proper property */
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.imgWrap {
+    /*max-height: 120px;*/
+    padding-top: 40px;
+    overflow: auto;
+}
+
+.imgWrap img,
+[data-design="optionOne"] div.shadow-sm,
+[data-design="optionOne"] div.shadow-sm.mb-4,
+#backToTop {
+    box-shadow: 0 8px 6px -6px black;
+}
+
+[data-design="optionOne"] div[data-section]:nth-child(even) {
+    padding: 40px 0 15px;
+    border-bottom: 1px solid #cccac2;
+    border-top: 1px solid #cccac2;
+    background-color: #e8e6dd;
+}
+
+[data-design="optionOne"] div[data-section="secondary"] h3 {
+    text-align: center;
+}
+
+div[data-section="secondary"] p {
+    font-size: 14px;
+}
+
+div[data-section="secondary"] .row {
+    min-height: 140px;
+}
+
+div[data-section="secondary"] .editMode .row {
+    min-height: auto;
+}
+
+.imgWrap {
+    overflow: hidden;
+}
+
+/*end secondary css*/
+
+/*Contact section*/
+
+[data-design="optionOne"] div[data-section] a[href] {
+    color: #404040;
+}
+
+.contactMap {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    border: 0px;
+}
+
+/*
+Footer styles
+*/
+
+[data-design="optionOne"] .footer a[data-social],
+[data-design="optionOne"] #editMode {
+    color: #6c757d;
+}
+
+[data-design="optionOne"] .footer a[data-social]:hover,
+[data-design="optionOne"] #editMode:hover,
+[data-design="optionOne"] footer label,
+[data-design="optionOne"] #editMode:hover,
+[data-design="optionOne"] a[href="#loginBtn"] {
+    color: #fff;
+}
+
+/*start optionTwo CSS*****************************************************************************************************/
+
+body[data-design="optionTwo"] {
+    margin: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #404040;
+}
+
+body[data-design="optionTwo"] .bg-dark {
+    background-color: #f8f8f8 !important;
+    color: #333;
+    border-bottom: 2px solid #333 !important;
+}
+
+body[data-design="optionTwo"] #top ul.inline li,
+body[data-design="optionTwo"] #top ul.inline {
+    font-size: 14px !important;
+    text-align: center;
+}
+
+body[data-design="optionTwo"] .footer {
+    border-top: 5px solid #333;
+}
+
+body[data-design="optionTwo"] .contactNav,
+body[data-design="optionTwo"] ul.contactNav li a,
+body[data-design="optionTwo"] ul.contactNav li a:visited {
+    color: #333 !important;
+}
+
+body[data-design="optionTwo"] .row.moveUp {
+    padding: 30px 30px 20px 30px;
+    border: #fff 1px solid;
+}
+
+body[data-design="optionTwo"] .row.moveUp,
+body[data-design="optionTwo"] .shadow-sm {
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    background-color: #333;
+}
+
+[data-design="optionTwo"] h1,
+[data-design="optionTwo"] h2,
+[data-design="optionTwo"] h3,
+[data-design="optionTwo"] h4,
+[data-design="optionTwo"] h5 {
+    font-family: "Passion One", cursive;
+    color: #333;
+}
+
+[data-design="optionTwo"] h1 {
+    font-size: 33px;
+}
+
+[data-design="optionTwo"] h2 {
+    font-size: 28px;
+}
+
+[data-design="optionTwo"] h3 {
+    font-size: 25px;
+}
+
+[data-design="optionTwo"] h4 {
+    font-size: 22px;
+}
+
+[data-design="optionTwo"] .focusTeaser h1 {
+    color: #fff;
+}
+
+[data-design="optionTwo"] h2+hr {
+    overflow: visible;
+    /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+[data-design="optionTwo"] h2+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(even) h2+hr {
+    border-top: medium double #fff;
+    color: #fff;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(even) h2+hr:after {
+    background-color: #808080;
+    color: #fff;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(odd) h2+hr:after {
+    background-color: #fff;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(odd) .list-group-item {
+    color: #333;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(odd) .list-group-item:hover {
+    background-color: #e6e6e6;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(even) h1,
+[data-design="optionTwo"] [data-section]:nth-child(even) h2,
+[data-design="optionTwo"] [data-section]:nth-child(even) h3,
+[data-design="optionTwo"] [data-section]:nth-child(even) h5,
+[data-design="optionTwo"] [data-section]:nth-child(even) a[href] {
+    color: #fff;
+}
+
+[data-design="optionTwo"] [data-section]:nth-child(odd) .list-group-item.active {
+    background-color: #b3b3b3;
+}
+
+[data-design="optionTwo"] div[data-section="listSection"] button.list-group-item {
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+}
+
+[data-design="optionTwo"] div[data-section="listSection"] button.list-group-item:hover {
+    background-color: #8c8c8c;
+    text-decoration: underline;
+}
+
+[data-design="optionTwo"] div[data-section="listSection"] button.list-group-item.active {
+    background-color: #999;
+    font-weight: 800;
+}
+
+[data-design="optionTwo"] div.shadow-sm,
+[data-design="optionTwo"] nav i[class*="fa-"],
+[data-design="optionTwo"] .shadow-sm .btn-outline-primary,
+[data-design="optionTwo"] a[href].mailLink,
+[data-design="optionTwo"] a[href].mailLink:visited {
+    color: #333;
+}
+
+[data-design="optionTwo"] .moveUp {
+    margin-top: -130px;
+}
+
+/*[data-design="optionTwo"] .jumbotron {
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
+  color: #fff;
+  border-radius: 0px;
+}*/
+/*start main focus*/
+
+[data-design="optionTwo"] .mainFocusBg {
+    background-color: #333;
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/option2Bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+[data-design="optionTwo"] .img-thumbnail {
+    border-radius: 0px;
+    padding: 0px;
+}
+
+/*[data-design="optionTwo"] .focusTeaser {
+  z-index: 2;
+  color: #fff;
+  background-color: transparent;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/darkBg.png);
+  background-repeat: repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}*/
+
+[data-design="optionTwo"] .focusTeaser h1 {
+    margin-top: 40%;
+    text-align: center;
+}
+
+/*end main focus*/
+
+/*start secondary css */
+[data-design="optionTwo"] div[data-section]:nth-child(even) {
+    padding: 40px 0 15px;
+    border-bottom: 5px solid #333333;
+    border-top: 5px solid #333333;
+    background-color: #808080;
+    color: #fff;
+}
+
+[data-design="optionTwo"] div[data-section]:nth-child(even) h4,
+[data-design="optionTwo"] div[data-section]:nth-child(even) h2 {
+    color: #fff;
+}
+
+[data-design="optionTwo"] div[data-section="secondary"] h3 {
+    text-align: center;
+}
+
+/*end secondary css*/
+
+/*Contact section*/
+
+[data-design="optionTwo"] div[data-section] a[href] {
+    color: #333;
+}
+
+[data-design="optionTwo"] div[data-section] ul.numbered li a[href] {
+    color: #fff;
+}
+
+.contactMap {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    border: 0px;
+}
+
+/*
+Footer styles
+*/
+
+[data-design="optionTwo"] .footer a[data-social],
+[data-design="optionTwo"] #editMode,
+[data-design="optionTwo"] nav a[data-social] i {
+    color: #333 !important;
+}
+
+[data-design="optionTwo"] .footer a[data-social]:hover,
+[data-design="optionTwo"] #editMode:hover {
+    color: #fff;
+}
+
+/*start optionThree CSS*****************************************************************************************************/
+/*div[data-section]:before,
+div.bg-dark:after {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 9px;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/header-bottom-arrow.png);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  content: "";
+}*/
+
+body[data-design="optionThree"] div[data-section]:nth-child(even) {
+    position: relative;
+    padding: 35px 0 0;
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/footer-top-arrow.png);
+    background-repeat: repeat-x;
+    z-index: 999;
+}
+
+body[data-design="optionThree"] div[data-section]:nth-child(odd) {
+    position: relative;
+    padding: 35px 0 0;
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/header-bottom-arrow.png);
+    background-repeat: repeat-x;
+    z-index: 999;
+}
+
+/*footer {
+  position: relative;
+  padding: 0px;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/footer-top-arrow.png);
+  background-repeat: repeat-x;
+  z-index: 999;
+}*/
+
+body[data-design="optionThree"] {
+    margin: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #404040;
+}
+
+[data-design="optionThree"] #backToTop {
+    color: #ffffff;
+}
+
+[data-design="optionThree"] #backToTop:hover {
+    color: #330000;
+}
+
+body[data-design="optionThree"] #top {
+    background-color: #330000 !important;
+    color: #fff;
+    border-bottom: 5px solid #fff !important;
+}
+
+body[data-design="optionThree"] #top ul.inline li,
+body[data-design="optionThree"] #top ul.inline {
+    font-size: 14px !important;
+    text-align: center;
+}
+
+/*body[data-design="optionThree"] ul.contactNav li a,
+body[data-design="optionThree"] ul.contactNav li a:visited {
+  color: #333 !important;
+}*/
+
+body[data-design="optionThree"] .row.moveUp {
+    padding: 0px 0px 0px 0px;
+    border: #fff 1px solid;
+}
+
+body[data-design="optionThree"] .teaser .mb-4 {
+    margin-bottom: 0rem !important;
+}
+
+body[data-design="optionThree"] .row.moveUp,
+body[data-design="optionThree"] .shadow-sm {
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    background-color: #330000;
+}
+
+[data-design="optionThree"] h1,
+[data-design="optionThree"] h2,
+[data-design="optionThree"] h3,
+[data-design="optionThree"] h4,
+[data-design="optionThree"] h5 {
+    font-family: "Squada One", cursive;
+    color: #333;
+}
+
+[data-design="optionThree"] h1 {
+    font-size: 33px;
+}
+
+[data-design="optionThree"] h2 {
+    font-size: 28px;
+}
+
+[data-design="optionThree"] h3 {
+    font-size: 25px;
+}
+
+[data-design="optionThree"] h4 {
+    font-size: 22px;
+}
+
+[data-design="optionThree"] .focusTeaser h1,
+[data-design="optionThree"] #top h3 {
+    color: #fff;
+}
+
+[data-design="optionThree"] h2+hr {
+    overflow: visible;
+    /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+[data-design="optionThree"] h2+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(even) h2+hr {
+    border-top: medium double #fff;
+    color: #fff;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(even) h2+hr:after {
+    background-color: #333;
+    color: #fff;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(odd) h2+hr:after {
+    background-color: #fff;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(odd) .list-group-item {
+    color: #333;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(odd) .list-group-item:hover {
+    background-color: #e6e6e6;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(even) h1,
+[data-design="optionThree"] [data-section]:nth-child(even) h2,
+[data-design="optionThree"] [data-section]:nth-child(even) h3,
+[data-design="optionThree"] [data-section]:nth-child(even) a[href] {
+    color: #fff;
+}
+
+[data-design="optionThree"] [data-section]:nth-child(odd) .list-group-item.active {
+    background-color: #b3b3b3;
+}
+
+[data-design="optionThree"] div[data-section="listSection"] button.list-group-item {
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+}
+
+[data-design="optionThree"] div[data-section="listSection"] button.list-group-item:hover {
+    background-color: #8c8c8c;
+    text-decoration: underline;
+}
+
+[data-design="optionThree"] div[data-section="listSection"] button.list-group-item.active {
+    background-color: #999;
+    font-weight: 800;
+}
+
+[data-design="optionThree"] div.shadow-sm,
+[data-design="optionThree"] nav i[class*="fa-"],
+[data-design="optionThree"] .shadow-sm .btn-outline-primary,
+[data-design="optionThree"] a[href].mailLink,
+[data-design="optionThree"] a[href].mailLink:visited {
+    color: #fff;
+}
+
+[data-design="optionThree"] .moveUp {
+    margin-top: -130px;
+}
+
+[data-design="optionThree"] .moveUp div[class*="col-"].teaser {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*[data-design="optionThree"] .jumbotron {
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
+  color: #fff;
+  border-radius: 0px;
+}*/
+/*start main focus*/
+
+[data-design="optionThree"] .mainFocusBg {
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/option3Bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+[data-design="optionThree"] .imgWrap {
+    border: 1px solid #fff;
+    padding: 0px;
+}
+
+[data-design="optionThree"] .img-thumbnail {
+    border-radius: 0px;
+    padding: 0px;
+}
+
+/*[data-design="optionThree"] .focusTeaser {
+  z-index: 2;
+  color: #fff;
+  background-color: transparent;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/darkBg.png);
+  background-repeat: repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}*/
+
+[data-design="optionThree"] .focusTeaser h1 {
+    margin-top: 40%;
+    text-align: center;
+}
+
+/*end main focus*/
+
+/*start 3rd css */
+[data-design="optionThree"] div[data-section]:nth-child(even) {
+    padding: 40px 0 15px;
+    border-bottom: 5px solid #330000;
+    border-top: 5px solid #330000;
+    background-color: #333;
+    color: #fff;
+}
+
+[data-design="optionThree"] div[data-section]:nth-child(even) h4,
+[data-design="optionThree"] div[data-section]:nth-child(even) h2 {
+    color: #fff;
+}
+
+[data-design="optionThree"] div[data-section="secondary"] h3 {
+    text-align: center;
+}
+
+/*Contact section*/
+
+[data-design="optionThree"] div[data-section] a[href] {
+    color: #333;
+}
+
+[data-design="optionThree"] div[data-section] ul.numbered li a[href] {
+    color: #fff;
+}
+
+/*
+Footer styles
+*/
+[data-design="optionThree"] footer.bg-dark {
+    background-color: #333;
+    border-top: #fff 5px solid;
+}
+
+[data-design="optionThree"] .footer a[data-social],
+[data-design="optionThree"] .footer,
+[data-design="optionThree"] #editMode,
+[data-design="optionThree"] nav a[data-social] i {
+    color: #fff !important;
+}
+
+[data-design="optionThree"] .footer a[data-social]:hover,
+[data-design="optionThree"] #editMode:hover {
+    color: #fff;
+}
+
+/*start optionFour CSS*****************************************************************************************************/
+/*div[data-section]:before,
+div.bg-dark:after {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 9px;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/header-bottom-arrow.png);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  content: "";
+}*/
+
+/*body[data-design="optionFour"] div[data-section]:nth-child(even) {
+  position: relative;
+  padding: 35px 0 0;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/footer-top-arrow.png);
+  background-repeat: repeat-x;
+  z-index: 999;
+}
+
+body[data-design="optionFour"] div[data-section]:nth-child(odd) {
+  position: relative;
+  padding: 35px 0 0;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/header-bottom-arrow.png);
+  background-repeat: repeat-x;
+  z-index: 999;
+}
+
+footer {
+  position: relative;
+  padding: 0px;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/footer-top-arrow.png);
+  background-repeat: repeat-x;
+  z-index: 999;
+}*/
+
+body[data-design="optionFour"] {
+    margin: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #404040;
+}
+
+[data-design="optionFour"] #backToTop {
+    color: #ffd633;
+}
+
+body[data-design="optionFour"] #top {
+    color: #ffd633;
+    border-bottom: 5px solid #ffd633 !important;
+}
+
+body[data-design="optionFour"] #top ul.inline li,
+body[data-design="optionFour"] #top ul.inline {
+    font-size: 14px !important;
+    text-align: center;
+}
+
+body[data-design="optionFour"] .contactNav,
+body[data-design="optionFour"] ul.contactNav li a,
+body[data-design="optionFour"] ul.contactNav li a:visited {
+    color: #ffd633 !important;
+}
+
+body[data-design="optionFour"] .row.moveUp {
+    padding: 0px 0px 0px 0px;
+    border: #ffd633 1px solid;
+}
+
+body[data-design="optionFour"] .teaser .mb-4 {
+    margin-bottom: 0rem !important;
+}
+
+body[data-design="optionFour"] .row.moveUp,
+body[data-design="optionFour"] .shadow-sm {
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    background-image: linear-gradient(180deg, #a6a6a6, grey);
+    background-repeat: no-repeat;
+
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.2), 0 1px 2px transparent;
+}
+
+[data-design="optionFour"] h1,
+[data-design="optionFour"] h2,
+[data-design="optionFour"] h3,
+[data-design="optionFour"] h4,
+[data-design="optionFour"] h5 {
+    font-family: "Fjalla One", cursive;
+}
+
+[data-design="optionFour"] h1 {
+    font-size: 33px;
+}
+
+[data-design="optionFour"] h2 {
+    font-size: 28px;
+}
+
+[data-design="optionFour"] h3 {
+    font-size: 25px;
+}
+
+[data-design="optionFour"] h4 {
+    font-size: 22px;
+}
+
+[data-design="optionFour"] .focusTeaser h1,
+[data-design="optionFour"] #top h3 {
+    color: #ffd633;
+}
+
+[data-design="optionFour"] h2+hr {
+    overflow: visible;
+    /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+
+[data-design="optionFour"] h2+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(even) h2+hr {
+    border-top: medium double #ffd633;
+    color: #ffd633;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(even) h2+hr:after,
+[data-design="optionFour"] [data-section]:nth-child(even) h5,
+[data-design="optionFour"] [data-section]:nth-child(even) label,
+[data-design="optionFour"] footer .txtCenter,
+[data-design="optionFour"] footer .txtCenter a[href] {
+    color: #ffd633;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(even) h2+hr:after {
+    background-color: #333;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(odd) h2+hr:after {
+    background-color: #fff;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(odd) .list-group-item {
+    color: #333;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(odd) .list-group-item:hover {
+    background-color: #e6e6e6;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(even) h1,
+[data-design="optionFour"] [data-section]:nth-child(even) h2,
+[data-design="optionFour"] [data-section]:nth-child(even) h3,
+[data-design="optionFour"] [data-section]:nth-child(even) a[href] {
+    color: #ffd633;
+}
+
+[data-design="optionFour"] [data-section]:nth-child(odd) .list-group-item.active {
+    background-color: #b3b3b3;
+}
+
+[data-design="optionFour"] div[data-section="listSection"] button.list-group-item {
+    border-radius: 0px;
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+}
+
+[data-design="optionFour"] div[data-section="listSection"] button.list-group-item:hover {
+    background-color: #8c8c8c;
+    text-decoration: underline;
+}
+
+[data-design="optionFour"] div[data-section="listSection"] button.list-group-item.active {
+    background-color: #999;
+    font-weight: 800;
+}
+
+[data-design="optionFour"] div.shadow-sm,
+[data-design="optionFour"] nav i[class*="fa-"],
+[data-design="optionFour"] .shadow-sm .btn-outline-primary,
+[data-design="optionFour"] a[href].mailLink,
+[data-design="optionFour"] a[href].mailLink:visited {
+    color: #ffd633;
+}
+
+[data-design="optionFour"] .moveUp {
+    margin-top: -130px;
+}
+
+[data-design="optionFour"] .moveUp div[class*="col-"].teaser {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*[data-design="optionFour"] .jumbotron {
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
+  color: #ffd633;
+  border-radius: 0px;
+}*/
+/*start main focus*/
+
+[data-design="optionFour"] .mainFocusBg {
+    /*background-image: linear-gradient(#ffe6e6, #fff);*/
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/webPresenceLogoAndBG.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+[data-design="optionFour"] .imgWrap {
+    border: 1px solid #ffd633;
+    padding: 0px;
+}
+
+[data-design="optionFour"] .img-thumbnail {
+    border-radius: 0px;
+    padding: 0px;
+}
+
+/*[data-design="optionFour"] .focusTeaser {
+  z-index: 2;
+  color: #ffd633;
+  background-color: transparent;
+  background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/darkBg.png);
+  background-repeat: repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}*/
+
+[data-design="optionFour"] .focusTeaser h1 {
+    margin-top: 40%;
+    text-align: center;
+}
+
+/*end main focus*/
+
+/*start optionFour css */
+[data-design="optionFour"] div[data-section]:nth-child(even) {
+    padding: 40px 0 15px;
+    border-bottom: 5px solid #ffd633;
+    border-top: 5px solid #ffd633;
+    background-color: #333;
+    color: #fff;
+}
+
+[data-design="optionFour"] div[data-section]:nth-child(even) h4,
+[data-design="optionFour"] div[data-section]:nth-child(even) h2 {
+    color: #ffd633;
+}
+
+[data-design="optionFour"] div[data-section="secondary"] h3 {
+    text-align: center;
+}
+
+/*Contact section*/
+
+[data-design="optionFour"] div[data-section] a[href] {
+    color: #333;
+}
+
+[data-design="optionFour"] div[data-section]:nth-child(even) ul.numbered li a[href] {
+    color: #fff;
+}
+
+/*
+Footer styles
+*/
+[data-design="optionFour"] footer.bg-dark {
+    background-color: #666666;
+    border-top: #ffd633 5px solid;
+}
+
+[data-design="optionFour"] .footer a[data-social],
+[data-design="optionFour"] .footer,
+[data-design="optionFour"] #editMode,
+[data-design="optionFour"] nav a[data-social] i {
+    color: #ffd633 !important;
+}
+
+[data-design="optionFour"] .footer a[data-social]:hover,
+[data-design="optionFour"] #editMode:hover {
+    color: #ffd633;
+}
+
+/*start responsive css****************************************************************************************************/
+
+@media (max-width: 1200px) {
+
+    /*start main focus*/
+    .teaser .img-thumbnail {
+        min-height: auto;
+        max-height: auto;
+        overflow: hidden;
+    }
+
+    .focusTeaser {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    .focusTeaser h1 {
+        margin-top: 25%;
+        font-size: 30px;
+    }
+
+    /*.mainTease h5 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .mainTease p {
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 700;
+  }*/
+
+    /***OPTION 2***/
+    /*[data-design="optionTwo"] .mainTease h5 {
+    padding-top: 5px;
+    font-size: 20px;
+    line-height: 15px;
+    font-weight: 700;
+  }
+
+  [data-design="optionTwo"] .mainTease p {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+  }*/
+}
+
+/*end 1200*/
+
+@media (max-width: 1024px) {
+    .teaser .img-thumbnail {
+        min-height: auto;
+        max-height: auto;
+    }
+
+    .teaser .img-thumbnail img {
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    [data-contact] i {
+        width: 100%;
+    }
+
+    .jumbotron {
+        background-position: 0px 0px;
+    }
+
+    /*.mainTease h5 {
+    font-size: 25px;
+
+    font-weight: 700;
+  }
+
+  .mainTease p {
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 700;
+  }*/
+}
+
+/*END 1024*/
+
+@media (max-width: 992px) {
+    .imgWrap {
+        max-height: 400px;
+        padding-top: 10px;
+    }
+
+    [data-design="optionFour"] .imgWrap,
+    [data-design="optionThree"] .imgWrap {
+        border: none;
+    }
+
+    [data-design="optionFour"] .imgWrap img {
+        border: 1px solid #ffd633;
+    }
+
+    [data-design="optionThree"] .imgWrap img {
+        border: 1px solid #fff;
+    }
+}
+
+/*end 993*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .mainTease h5 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.05rem;
+    }
+
+    .mainTease p {
+        font-size: 0.7rem;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .post [data-content] {
+        max-height: auto;
+    }
+
+    /*start main focus*/
+
+    .hideAt768 {
+        display: none;
+    }
+
+    .showAt768 {
+        display: block;
+    }
+
+    [data-contact] i {
+        width: auto;
+    }
+
+    .topNavSocial,
+    h3[data-item="topTitle"] {
+        text-align: center;
+    }
+
+    .jumbotron {
+        margin-bottom: 0px;
+        padding: 4rem 0rem;
+
+        background-position: 0px 0px;
+    }
+
+    [data-design="optionOne"] .focusTeaser h1 {
+        margin-top: 20%;
+        line-height: 40px;
+    }
+
+    .mainTease {
+        width: 100%;
+        /*height: 150px;*/
+        padding: 10px;
+        /*top: 30%;*/
+        bottom: 0px;
+        /*background-color: #dedbcfb3;*/
+    }
+
+    /****************************optionTwo********************************/
+
+    [data-design="optionTwo"] .focusTeaser h1 {
+        margin-top: 20%;
+        line-height: 30px;
+        font-size: 30px;
+    }
+
+    /*[data-design="optionTwo"] .mainTease h5 {
+    font-size: 20px;
+  }
+
+  [data-design="optionTwo"] .mainTease p {
+    font-size: 12px !important;
+  }
+
+  .focusTeaser {
+    width: 98.5%;
+    height: 98.5%;
+    opacity: 0;
+  }
+  [data-design="optionTwo"] .teaser .img-thumbnail,
+  [data-design="optionOne"] .teaser .img-thumbnail {
+    min-height: auto;
+    max-height: auto;
+  }
+
+  [data-design="optionTwo"] div[data-section="sectionFour"] h1 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  [data-design="optionTwo"] div[data-section="sectionFour"] h3 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  [data-design="optionTwo"] .focusTeaser h1 {
+    margin-top: 20%;
+    font-size: 45px;
+  }
+  
+  [data-design="optionTwo"] .mainTease h5 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  [data-design="optionTwo"] .mainTease p {
+    font-size: 16px;
+    line-height: 15px;
+    font-weight: 700;
+  }
+
+  [data-design="optionOne"] p.lead {
+    background-image: url(https://www.mechanized-aesthetics.net/TEST/testImg/darkBg.png);
+    background-repeat: repeat;
+    border-radius: 5px;
+  }*/
+
+    #top ul.inline li {
+        display: block;
+        text-align: center;
+    }
+
+    #top ul.inline {
+        margin: auto;
+        width: 100%;
+    }
+
+    #backToTop {
+        top: 65%;
+        left: 0px;
+        padding-left: 3px;
+        padding-right: 4px;
+        font-size: 20px;
+    }
+
+    /*[data-design="optionOne"] .mainFocusBg {
+    background-color: #333;
+    background-image: url(http://www.mechanized-aesthetics.net/TEST/testImg/option1BgMobile.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  [data-design="optionTwo"] .mainFocusBg {
+    background-color: #333;
+    background-image: url(http://www.mechanized-aesthetics.net/TEST/testImg/option2BgMobile.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  [data-design="optionThree"] .mainFocusBg {
+    background-color: #000;
+    background-image: url(http://www.mechanized-aesthetics.net/TEST/testImg/option3BgMobile.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  [data-design="optionFour"] .mainFocusBg {
+    
+    background-color: #000;
+    background-image: url(http://www.mechanized-aesthetics.net/TEST/testImg/webPresenceLogoAndBGMobile.jpg);
+    opacity: 0.1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }*/
+}
+
+/*end 767*/
+
+@media (max-width: 375px) {
+    p.lead {
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    [data-design="optionOne"] .mainTease {
+        margin-top: 0px !important;
+    }
+
+    .mainTease {
+        top: 50%;
+        bottom: 0px;
+        /*background-color: #dedbcfb3;*/
+    }
+
+    .focusTeaser h1 {
+        margin-top: 25%;
+        font-size: 45px;
+    }
+
+    [data-item="topTitle"] {
+        text-align: center;
+    }
+
+    /*.mainTease h5 {
+    padding-top: 10px;
+    font-size: 30px;
+    line-height: 15px;
+    font-weight: 700;
+  }
+
+  .mainTease p {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+  }*/
+}
+
+/*end 375*/
