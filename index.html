@@ -24,8 +24,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <title>Fundraiser</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Global site tag (gtag.js) - Google Analytics 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJWFFXF8G0"></script>
     <script>
@@ -44,6 +43,121 @@
 </head>
 
 <body data-design="optionTwo">
+    <div id="root">
+        <div>
+
+            <div class="container-fluid p-3 px-md-4 bg-dark border-bottom shadow-sm" id="top">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3 class="my-0 mr-md-auto font-weight-normal animated" data-title>
+                        </h3><a href="#top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+                    </div>
+
+                    <div class="col-md-6 justify-content-md-center">
+                        <ul class="inline" data-contact>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-md-3 ">
+                        <nav class="my-2 my-md-0 mr-md-3 text-end" data-social></nav>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <section class="jumbotron text-center" id="jumbotronImg">
+                    <div class="container">
+                        <h1 class="jumbotron-heading lightTxt" id="jumbotronHeading"></h1>
+                        <p class="lead lightTxt" id="jumbotronLead"> </p>
+                    </div>
+                    <div class="row  d-block d-sm-none">
+                        <div class="col-md-12 ">
+                            <ul class="nav justify-content-center" id="mobileTeasers">
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <main>
+
+                <div class="album py-5 mainFocusBg hideAt768 animated fadeIn">
+                    <div class="container">
+                        <div class="row moveUp" id="teasers">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid" data-section="secondary">
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-12">
+                                <h2 class="txtCenter" data-content="0"></h2>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-5 imgWrap animated fadeInUp" data-scroll="0">
+                                <div class="row text-center " id="mediaTarget">
+                                    <div style="width:100%; min-height:500px;" id="imageCarouselTarget"></div>
+
+
+
+                                    <label class="sliderIndexCounter ">Image:<span id="imageCounter"></span></label>
+                                    <ul class="inline txtCenter block">
+                                        <li>
+                                            <button type="button" class="btn btn-secondary mr-2 "
+                                                onClick="carouselMove('previous','image')">
+                                                <i class="fas fa-arrow-circle-left"></i> Image</button>
+
+                                            <button type="button" class="btn btn-secondary ml-2 "
+                                                onClick="carouselMove('next','image')">Image <i
+                                                    class="fas fa-arrow-circle-right"></i>
+                                            </button>
+                                        </li>
+
+                                    </ul>
+
+                                    <ul class="carouselIndexParent txtCenter" data-carousel="image"></ul>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-7  animated fadeInUp contentTxt" data-scroll="0">
+                                <!--<h4>Dave</h4>
+                                <p>My friend Dave Wilson was in a life altering accident in November 2014. A lady ran a
+                                    stop sign and
+                                    Dave's Life changed forever. Not just for Dave...who is now a quadriplegic but for
+                                    Dave's precious
+                                    daughter Ella Kate. And for David's entire family.</p>
+                                <p>The medical expenses have piled up and Dave's family needs help.</p>
+                                <p>Myself and a few others organize a yearly fundraiser. We will be hosting a
+                                    Fundraising Golf
+                                    Tournament at Duck Creek Golf Club Garland, TX Friday November 7th 9:00 AM and then
+                                    at 7:00 PM that
+                                    evening we will be hosting a fundraising happy hour at Drinks Saloon in Richardson
+                                    where we will be
+                                    selling raffle tickets for prizes where the proceeds will go entirely to Dave.</p>
+                                <p>Please RSVP if you will be attending one or both events.</p>
+                                <p>We could use some help in getting raffle prizes. So if you would like to help just
+                                    let me know.</p>
+                                <p>Look forward to seeing everyone again.</p>
+                                <h4><u><a href="https://www.paypal.me/MarkBier?locale.x=en_US" target="_blank"> Donate:
+                                            <i class="fab fa-paypal"></i></a></u></h4>-->
+                            </div>
+                            <hr>
+                        </div>
+                        <hr>
+                        <div></div>
+                    </div>
+                    <div class="modal-backdrop show" style="display: none;"></div>
+                </div>
+
+
+
+            </main>
+        </div>
+    </div>
 
 </body>
 <script src="config/localData.js"></script>
