@@ -199,14 +199,14 @@ function setImageActive(num) {
     document.getElementById("imageCounter").innerHTML = (1 + num) + "/" + parseInt(imageAddresses.length);
     document.getElementById("imageCarouselTarget").style.backgroundImage = "url('" + imageAddresses[num] + "')";
 }
-
+/*
 try {
     document.querySelector("#mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[0])
 } catch (error) {
     console.log("No videos: " + error);
 }
 
-
+*/
 
 function carouselMove(direction, media) {
     let videoListLength = parseInt(ytVideos.length);

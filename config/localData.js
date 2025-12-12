@@ -97,7 +97,23 @@ const data = [{
         {
             section: "sectionTwo", HTMLcontent: `<div class="container"><div class="row equalize1"><div data-equalize="0" class="col-md-6"><h2>Drinks Saloon</h2><img src='img/drinksSaloon2022.jpg' style='border:0px; width:100%; height:auto;'  /></div><div data-equalize="0" class="col-md-6"><h2>Draft beer & cocktails</h2><p>The place for Darts in Dallas. 22 draft selections and full bar. Feat. 18 big screens for all sports.</p><ul class='list-unstyled'><li><u><a href='https://www.facebook.com/drinkssaloon94/' target='_blank'><i class='fab fa-facebook'></i> facebook.com/drinkssaloon94</a></u></li><li><u><a href='https://www.instagram.com/drinkssaloon/' target='_blank'><i class='fab fa-instagram'></i> instagram.com/drinkssaloon</a></u></li><li><u><a href='https://twitter.com/SaloonDrinks' target='_blank'> <i class='fab fa-twitter'></i> twitter.com/SaloonDrinks</a></u></li></ul><hr/><p>Please RSVP if you will be attending one or both events.</p><p>We could use some help in getting raffle prizes.  So if you would like to help just let me know.</p><p>Look forward to seeing everyone again.</p></div></div></div>`
         }
-    ]
+    ],
+    "events": [
+        {
+            "address": "2800 Diamond Oaks Dr. Garland, TX 75044",
+            "contact": "(214) 440-2229",
+            "dateTime": "9:00 am Shotgun Start Friday November 7th",
+            "details": "<p>Cost per person $100. Please pay early so we can guarantee you a spot. You can Paypal the money to <u><a href='mailto:mbier@apollostaffing.com'>mbier@apollostaffing.com</a></u> or Venmo <u><a href='https://account.venmo.com/u/Mark-Bier' target='_blank'>@Mark-Bier.</a></u>.</p><p>Please RSVP if you will be attending one or both events.</p><p>We could use some help in getting raffle prizes.  So if you would like to help just let me know.</p><p>Look forward to seeing everyone again.</p>",
+            "title": "Duck Creek Golf Club"
+        },
+        {
+            "address": "13440 T I Blvd #2, Dallas, TX 75243",
+            "contact": "(972) 783-9900",
+            "dateTime": "Friday, November 7th at 7:00 p.m.",
+            "details": "<p>Basically in Richardson close to Spring Valley and Greenville. Right behind TI. Also, we are taking donations to help Dave with his Rehab costs.  Please PayPal Mark Bier for all golf fees or donations to <u><a href='mailto:mbier@apollostaffing.com'>mbier@apollostaffing.com</a></u> or Venmo at <u><a href='https://account.venmo.com/u/Mark-Bier' target='_blank'>@Mark-Bier.</a></u></p><p>Please RSVP if you will be attending one or both events.</p><p>We could use some help in getting raffle prizes.  So if you would like to help just let me know.</p><p>Look forward to seeing everyone again.</p>",
+            "title": "Drinks Saloon"
+        }
+    ],
 
 
 }
@@ -141,3 +157,39 @@ for (let i = 0; i < data[activeBusiness].info.length; i++) {
     document.querySelector(".target[data-section='" + data[activeBusiness].info[i].section + "']").innerHTML = infoIntro + data[activeBusiness].info[i].HTMLcontent;
 
 }
+
+
+/*START EVENTS*/
+eventBtListHTML = "";
+for (let i = 0; i < data[activeBusiness].events.length; i++) {
+    let isActive = "";
+    if (i === 0) {
+        isActive = "active";
+    }
+
+    eventBtListHTML = eventBtListHTML + `<button data-num="${i}" onClick="selectEvent(${i})" class="list-group-item list-group-item-action ${isActive}">${data[activeBusiness].events[i].title}</button>`;
+
+}
+
+document.getElementById("eventTitleBtListTarget").innerHTML = eventBtListHTML;
+
+
+
+function selectEvent(whichEvent) {
+    [].forEach.call(document.querySelectorAll("#eventTitleBtListTarget button[data-num]"), (e) => {
+        if (e.dataset.num == whichEvent) {
+            e.classList.add("active");
+        } else {
+            e.classList.remove("active");
+        }
+    });
+
+    document.getElementById("eventTitleTarget").innerHTML = data[activeBusiness].events[whichEvent].title;
+    document.getElementById("eventDateTimeTarget").innerHTML = data[activeBusiness].events[whichEvent].dateTime;
+    document.getElementById("eventAddressTarget").innerHTML = data[activeBusiness].events[whichEvent].address;
+    document.getElementById("eventContactTarget").innerHTML = data[activeBusiness].events[whichEvent].contact;
+    document.getElementById("eventDetailsTarget").innerHTML = data[activeBusiness].events[whichEvent].details;
+    document.getElementById("eventMap").setAttribute("src", `https://www.google.com/maps/embed/v1/place?key=AIzaSyBxvGBPN_lRhoYskabk_lZ5FAo4GIowU6I&amp;q=${data[activeBusiness].events[whichEvent].address}`);
+}
+selectEvent(0);
+

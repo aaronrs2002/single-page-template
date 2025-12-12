@@ -768,7 +768,7 @@ body[data-design="optionTwo"] .shadow-sm {
 
 [data-design="optionTwo"] .mainFocusBg {
     background-color: #333;
-    background-image: url(../img/option2Bg.jpg);
+    /* background-image: url(../img/option2Bg.jpg);*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1846,4 +1846,6 @@ ul.inline {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin: 15px;
+
 }
