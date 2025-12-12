@@ -1,6 +1,8 @@
 const data = [{
 
     title: "FUNDRAISING EXTRAVAGANZA",
+    map1: "AIzaSyBxvGBPN_lRhoY",
+    map2: "skabk_lZ5FAo4GIowU6I",
     contact: {
         address: "1401 N. Central Expressway Suite 208 Richardson, TX 75080",
         addressIcon: "fa-home",
@@ -189,7 +191,8 @@ function selectEvent(whichEvent) {
     document.getElementById("eventAddressTarget").innerHTML = data[activeBusiness].events[whichEvent].address;
     document.getElementById("eventContactTarget").innerHTML = data[activeBusiness].events[whichEvent].contact;
     document.getElementById("eventDetailsTarget").innerHTML = data[activeBusiness].events[whichEvent].details;
-    document.getElementById("eventMap").setAttribute("src", `https://www.google.com/maps/embed/v1/place?key=AIzaSyBxvGBPN_lRhoYskabk_lZ5FAo4GIowU6I&amp;q=${data[activeBusiness].events[whichEvent].address}`);
+    document.getElementById("eventMap").setAttribute("src", `https://www.google.com/maps/embed/v1/place?key=${data[activeBusiness].map1 + data[activeBusiness].map2}&amp;q=${data[activeBusiness].events[whichEvent].address}`);
+    //AIzaSyBxvGBPN_lRhoYskabk_lZ5FAo4GIowU6I
 }
 selectEvent(0);
 
