@@ -46,28 +46,28 @@ const data = [{
         {
             "focusTeaser": "Dave's Story",
             "id": 0,
-            "teaserImg": "https://www.mechanized-aesthetics.net/TEST/daveWilson/daveBlockBusterCropped.jpg",
+            "teaserImg": "img/daveBlockBusterCropped.jpg",
             "teaserText": "A bit about Dave",
             "teaserTitle": "Dave Wilson"
         },
         {
             "focusTeaser": "Find Out More!",
             "id": 1,
-            "teaserImg": "https://www.mechanized-aesthetics.net/TEST/daveWilson/golfView.jpg",
+            "teaserImg": "img/golfView.jpg",
             "teaserText": "Find out more",
             "teaserTitle": "Info"
         },
         {
             "focusTeaser": "Spend time with Friends",
             "id": 2,
-            "teaserImg": "https://www.mechanized-aesthetics.net/TEST/daveWilson/beverage.jpg",
+            "teaserImg": "img/beverage.jpg",
             "teaserText": "Booze it up with us!",
             "teaserTitle": "Events"
         },
         {
             "focusTeaser": "Reach Out",
             "id": 3,
-            "teaserImg": "https://www.mechanized-aesthetics.net/TEST/daveWilson/phone.jpg",
+            "teaserImg": "img/phone.jpg",
             "teaserText": "Reach out for any questions",
             "teaserTitle": "Contact"
         }
