@@ -258,6 +258,7 @@ code {
     border-top: medium double #333;
     color: #333;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 [data-design="optionOne"] h2+hr:after {
@@ -679,6 +680,7 @@ body[data-design="optionTwo"] .shadow-sm {
     border-top: medium double #333;
     color: #333;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 [data-design="optionTwo"] h2+hr:after {
@@ -975,8 +977,10 @@ body[data-design="optionThree"] .shadow-sm {
     padding: 0;
     border: none;
     border-top: medium double #333;
+
     color: #333;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 [data-design="optionThree"] h2+hr:after {
@@ -1277,6 +1281,7 @@ body[data-design="optionFour"] .shadow-sm {
     border-top: medium double #333;
     color: #333;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 [data-design="optionFour"] h2+hr:after {

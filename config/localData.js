@@ -300,7 +300,7 @@ let teasersHTML = "";
 
 let mobileTeasersHTML = "";
 for (let i = 0; i < data[activeBusiness].teasers.length; i++) {
-    teasersHTML = teasersHTML + `<div class="col-md-3 teaser"><div class="card mb-4 shadow-sm img-thumbnail" onMouseOver="teaserTransitionOver(${i})"
+    teasersHTML = teasersHTML + `<div class="col-md-3 teaser"><div class="card mb-4 shadow-sm img-thumbnail" onClick="scrollWindow('${i}')" onMouseOver="teaserTransitionOver(${i})"
                         onMouseOut="teaserTransitionOut(${i})">
                             <div class="focusTeaser animated center fadeIn fadeOut" data-focus="${i}">
                                 <h1>${data[activeBusiness].teasers[i].focusTeaser}</h1>

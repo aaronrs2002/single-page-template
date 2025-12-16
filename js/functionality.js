@@ -251,3 +251,16 @@ function carouselMove(direction, media) {
     }
 }
 setImageActive(0);
+
+
+
+
+/*START NAVIGATION*/
+function scrollWindow(num) {
+
+    document
+        .querySelector("[data-content='" + num + "']")
+        .scrollIntoView({ behavior: "smooth" });
+    console.log("should be scrolling: " + num);
+
+}
