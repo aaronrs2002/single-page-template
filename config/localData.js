@@ -554,7 +554,8 @@ document.getElementById("teasers").innerHTML = teasersHTML;
 document.getElementById("mobileTeasers").innerHTML = mobileTeasersHTML;
 //document.querySelector("[data-content='0']").innerHTML = data[activeBusiness].teasers[0].teaserTitle;
 //document.querySelector(".contentTxt[data-scroll='0']").innerHTML = "<h1>" + data[activeBusiness].about[0].aboutTitle + "</h1>" + data[activeBusiness].about[0].aboutText;
-
+console.log("data[activeBusiness].contact.address: " + data[activeBusiness].contact.address)
+document.querySelector(".contactMap").setAttribute("src", encodeURI(`https://www.google.com/maps/embed/v1/place?key=${data[activeBusiness].map1 + data[activeBusiness].map2}&q=${data[activeBusiness].contact.address}`));
 
 /* START INFO */
 let pgSections = [];
