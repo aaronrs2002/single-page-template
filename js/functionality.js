@@ -135,14 +135,54 @@ function selectEdit(num) {
 
 
 
+
+
+
+
+
+
+[].forEach.call(document.querySelectorAll("[data-imgs]"), (e, i) => {
+    /* <div  style="background-image: url('${data[activeBusiness].info[i].media[0]}')" class="img-fluid"  id="imageCarouselTarget-${i}" ></div>    */
+
+    e.innerHTML = `
+                <div><img src="${data[activeBusiness].info[i].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${i}" /></div>                 
+                <label class="sliderIndexCounter">Image:<span id="imageCounter-${i}"></span></label>
+
+                    <ul class="carouselIndexParent txtCenter" data-carousel="image" id="indexIcons-${i}"></ul>
+
+                 
+                    <ul class="inline txtCenter block">
+                        <li>
+                            <button type="button" class="btn btn-secondary mr-2 "
+                                onClick="carouselMove('previous','image',${i})">
+                                <i class="fas fa-arrow-circle-left"></i> Image</button>
+
+                            <button type="button" class="btn btn-secondary ml-2 "
+                                onClick="carouselMove('next','image',${i})">Image <i class="fas fa-arrow-circle-right"></i>
+                            </button>
+                        </li>
+
+                    </ul>
+`
+});
+
+
+
+
+
+
+
+
+
+
+
+
 let ytVideos = [];
-let imageAddresses = [];
-if (data[activeBusiness].about[0].media[0].indexOf(".jpg") !== -1) {
-    imageAddresses = data[activeBusiness].about[0].media;
-} else {
-    ytVideos = data[activeBusiness].about[0].media;
-}
-//START VIDEO CAROUSEL
+
+
+
+
+/*START VIDEO CAROUSEL
 let activeVideo = 0;
 let videoIndexStr = ""
 if (document.getElementById("videoCounter")) {
@@ -160,7 +200,7 @@ if (document.querySelector("[data-carousel='video']")) {
     document.querySelector("[data-carousel='video']").innerHTML = videoIndexStr;
 }
 
-function setVideoActive(num) {
+function setVideoActive(num, mediaNum) {
     activeVideo = num;
     [].forEach.call(document.querySelectorAll(".sliderIndex[data-video]"), (e) => {
         e.classList.remove("active");
@@ -168,36 +208,70 @@ function setVideoActive(num) {
     document.querySelector("[data-video='" + num + "']").classList.add("active");
     document.querySelector("#mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[num])
     document.getElementById("videoCounter").innerHTML = (1 + num) + "/" + parseInt(ytVideos.length);
-}
+}*/
 ///START IMAGE CAROUSEL
 
-let activeImage = 0;
-let imageIndexStr = "";
-if (document.getElementById("imageCounter")) {
-    document.getElementById("imageCounter").innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length) + " - " + imageAddresses[activeImage].substring(imageAddresses[activeImage].lastIndexOf("/"), imageAddresses[0].indexOf("."));
-}
+[].forEach.call(document.querySelectorAll("[data-carousel='image']"), (e, i) => {
 
-for (let i = 0; i < imageAddresses.length; i++) {
-    let standardClass = 'sliderIndex';
-    if (i === 0) {
-        standardClass = 'sliderIndex active';
+
+    imageAddresses = data[activeBusiness].info[i].media;
+    /*for (let j = 0; j < data[activeBusiness].info[i].media.length; j++) {
+         imageAddresses.push(data[activeBusiness].info[i].media[j]);
+         console.log("data[activeBusiness].info[i].media[j]): " + JSON.stringify(data[activeBusiness].info[i].media[j]));
+     }*/
+
+
+    let activeImage = 0;
+    let imageIndexStr = "";
+    if (document.getElementById("imageCounter-" + i)) {
+        document.getElementById("imageCounter-" + i).innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length) + " - " + imageAddresses[activeImage].substring(imageAddresses[activeImage].lastIndexOf("/"), imageAddresses[0].indexOf("."));
     }
-    imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + i + "' onClick='setImageActive(" + i + ")' ></li>";
-}
 
-if (document.querySelector("[data-carousel='image']")) {
-    document.querySelector("[data-carousel='image']").innerHTML = imageIndexStr;
-}
+    for (let j = 0; j < imageAddresses.length; j++) {
+        let standardClass = 'sliderIndex';
+        if (j === 0) {
+            standardClass = 'sliderIndex active';
+        }
+        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + i + ")' ></li>";
+    }
+
+    console.log(`imageIndexStr` + imageIndexStr);
+
+    if (document.querySelector("#indexIcons-" + i)) {
+        document.querySelector("#indexIcons-" + i).innerHTML = imageIndexStr;
+    }
+});
+
+/*
 
 
-function setImageActive(num) {
+/*start image carousels
+
+imageCarouselTarget-${i}
+imageCounter-${i}
+indexIcons-${i}
+*/
+
+
+
+
+
+function setImageActive(num, mediaNum) {
+
+
+    let imageAddresses = [];
+
+    imageAddresses = data[activeBusiness].info[mediaNum].media;
+
+    console.log("num: " + num + " - mediaNum: " + mediaNum);
     activeImage = num;
-    [].forEach.call(document.querySelectorAll(".sliderIndex[data-image]"), (e) => {
+    [].forEach.call(document.querySelectorAll("#indexIcons-" + mediaNum + " .sliderIndex[data-image]"), (e) => {
         e.classList.remove("active");
-    });
-    document.querySelector("[data-image='" + num + "']").classList.add("active");
-    document.getElementById("imageCounter").innerHTML = (1 + num) + "/" + parseInt(imageAddresses.length);
-    document.getElementById("imageCarouselTarget").style.backgroundImage = "url('" + imageAddresses[num] + "')";
+    });//"#indexIcons-" + i +"[data-image]"
+    document.querySelector("#indexIcons-" + mediaNum + " [data-image='" + num + "']").classList.add("active");
+    document.getElementById("imageCounter-" + mediaNum).innerHTML = (1 + num) + "/" + parseInt(imageAddresses.length);
+    document.getElementById("imageCarouselTarget-" + mediaNum).setAttribute("src", imageAddresses[num]);
+    document.getElementById("imageCarouselTarget-" + mediaNum).style.backgroundImage = "url('" + imageAddresses[num] + "')";
 }
 /*
 try {
@@ -206,26 +280,45 @@ try {
     console.log("No videos: " + error);
 }
 
+mageCarouselTarget-${i}
+imageCounter-${i}
+indexIcons-${i}
+
 */
 
-function carouselMove(direction, media) {
+function carouselMove(direction, media, mediaNum) {
+    let activeImage = 0;
+
+    if (media === "image" && document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image) {
+        activeImage = document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image;
+
+    }
+
+
+    if (media === "images") {
+        imageAddresses = [data[activeBusiness].info[i].media[mediaNum]];
+    }
+
+
+
+
     let videoListLength = parseInt(ytVideos.length);
     let imageListLength = parseInt(imageAddresses.length);
     if (direction === "next") {
         if (media === "video") {
             activeVideo = (parseInt(activeVideo) + 1);
             if (activeVideo >= videoListLength) {
-                setVideoActive(0);
+                setVideoActive(0, mediaNum);
             } else {
-                setVideoActive(activeVideo);
+                setVideoActive(activeVideo, mediaNum);
             }
         }
         if (media === "image") {
             activeImage = (parseInt(activeImage) + 1);
             if (activeImage >= imageListLength) {
-                setImageActive(0);
+                setImageActive(0, mediaNum);
             } else {
-                setImageActive(activeImage);
+                setImageActive(activeImage, mediaNum);
             }
         }
     }
@@ -234,33 +327,33 @@ function carouselMove(direction, media) {
         if (media === "video") {
             let tempActive = activeVideo - 1;
             if (tempActive < 0) {
-                setVideoActive(videoListLength - 1);
+                setVideoActive(videoListLength - 1, mediaNum);
             } else {
-                setVideoActive(activeVideo - 1);
+                setVideoActive(activeVideo - 1, mediaNum);
             }
         }
         if (media === "image") {
             let tempActive = activeImage - 1;
             if (tempActive < 0) {
-                setImageActive(imageListLength - 1);
+                setImageActive(imageListLength - 1, mediaNum);
             } else {
-                setImageActive(activeImage - 1);
+                setImageActive(activeImage - 1, mediaNum);
             }
         }
 
     }
 }
-setImageActive(0);
+setImageActive(0, 0);
+
+
 
 
 
 
 /*START NAVIGATION*/
 function scrollWindow(num) {
-
     document
         .querySelector("[data-content='" + num + "']")
         .scrollIntoView({ behavior: "smooth" });
-    console.log("should be scrolling: " + num);
 
 }

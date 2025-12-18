@@ -23,7 +23,7 @@
     <!--   <link href="https://aaronrs2002.github.io/black-jack/css/shared.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>Fundraiser</title>
+    <title>Single Page Web App</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Global site tag (gtag.js) - Google Analytics 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJWFFXF8G0"></script>
@@ -44,207 +44,189 @@
 
 <body data-design="optionTwo">
     <div id="root">
+
+
+        <div class="container-fluid p-3 px-md-4 bg-dark border-bottom shadow-sm" id="top">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="my-0 mr-md-auto font-weight-normal animated" data-title>
+                    </h3><a href="#top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+                </div>
+
+                <div class="col-md-6 justify-content-md-center">
+                    <ul class="inline" data-contact>
+
+
+                    </ul>
+                </div>
+                <div class="col-md-3 ">
+                    <nav class="my-2 my-md-0 mr-md-3 text-end" data-social></nav>
+                </div>
+            </div>
+        </div>
+
         <div>
-
-            <div class="container-fluid p-3 px-md-4 bg-dark border-bottom shadow-sm" id="top">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3 class="my-0 mr-md-auto font-weight-normal animated" data-title>
-                        </h3><a href="#top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-                    </div>
-
-                    <div class="col-md-6 justify-content-md-center">
-                        <ul class="inline" data-contact>
-
-
+            <section class="jumbotron text-center" id="jumbotronImg">
+                <div class="container">
+                    <h1 class="jumbotron-heading lightTxt" id="jumbotronHeading"></h1>
+                    <p class="lead lightTxt" id="jumbotronLead"> </p>
+                </div>
+                <div class="row  d-block d-sm-none">
+                    <div class="col-md-12 ">
+                        <ul class="nav justify-content-center" id="mobileTeasers">
                         </ul>
                     </div>
-                    <div class="col-md-3 ">
-                        <nav class="my-2 my-md-0 mr-md-3 text-end" data-social></nav>
+                </div>
+            </section>
+        </div>
+        <main>
+
+            <div class="album py-5 mainFocusBg hideAt768 animated fadeIn">
+                <div class="container">
+                    <div class="row moveUp" id="teasers">
+
                     </div>
                 </div>
             </div>
 
-            <div>
-                <section class="jumbotron text-center" id="jumbotronImg">
-                    <div class="container">
-                        <h1 class="jumbotron-heading lightTxt" id="jumbotronHeading"></h1>
-                        <p class="lead lightTxt" id="jumbotronLead"> </p>
-                    </div>
-                    <div class="row  d-block d-sm-none">
-                        <div class="col-md-12 ">
-                            <ul class="nav justify-content-center" id="mobileTeasers">
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <main>
 
-                <div class="album py-5 mainFocusBg hideAt768 animated fadeIn">
-                    <div class="container">
-                        <div class="row moveUp" id="teasers">
+            <div class="container-fluid">
 
-                        </div>
-                    </div>
+
+                <div class="row justify-content-md-center" data-section="0" data-content="0">
+                    <!-- <div class="col-md-12">
+                        <h2 class="txtCenter" data-target="Dave Wilson">Dave Wilson</h2>
+                        <hr>
+                    </div>-->
+                    <div class="album py-5 animated target"></div>
                 </div>
 
-                <div data-section="secondary">
+
+
+                <div class="row justify-content-md-center" data-section="1" data-content="1">
+                    <!-- <div class="col-md-12">
+                        <h2 class="txtCenter" data-target="Info">Info</h2>
+                        <hr>
+                    </div>-->
+                    <div class="album py-5 animated target"></div>
+
+
+                </div>
+
+                <div class="album py-5 animated target" data-section="2">
+                    <!-- <div class="col-md-12">
+                                        <h2 class="txtCenter" data-target="Dave Wilson">Dave Wilson</h2>
+                                        <hr>
+                                    </div>-->
+                    <div class="album py-5 animated target"></div>
+                </div>
+
+
+
+
+
+                <div class="album py-5" data-section="listSection">
                     <div class="container">
-                        <div class="row justify-content-md-center">
+                        <div class="row">
                             <div class="col-md-12">
-                                <h2 class="txtCenter" data-content="0"></h2>
+                                <h2 class="txtCenter" data-content="2">Events</h2>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-5 imgWrap animated fadeInUp" data-scroll="0">
-                                <div class="row text-center " id="mediaTarget">
-                                    <div style="width:100%; min-height:500px;" id="imageCarouselTarget"></div>
-
-
-
-                                    <label class="sliderIndexCounter ">Image:<span id="imageCounter"></span></label>
-                                    <ul class="inline txtCenter block">
-                                        <li>
-                                            <button type="button" class="btn btn-secondary mr-2 "
-                                                onClick="carouselMove('previous','image')">
-                                                <i class="fas fa-arrow-circle-left"></i> Image</button>
-
-                                            <button type="button" class="btn btn-secondary ml-2 "
-                                                onClick="carouselMove('next','image')">Image <i
-                                                    class="fas fa-arrow-circle-right"></i>
-                                            </button>
-                                        </li>
-
-                                    </ul>
-
-                                    <ul class="carouselIndexParent txtCenter" data-carousel="image"></ul>
-
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-7  animated fadeInUp contentTxt" data-scroll="0"> </div>
                             <hr>
-                        </div>
-                        <hr>
-
-
-                    </div>
-
-
-                </div>
-
-                <div class="album py-5 animated fadeIn" data-content="1">
-
-
-                    <div class="album py-5 animated target" data-section="sectionOne"></div>
-
-                    <div class="album py-5 animated target" data-section="sectionTwo"></div>
-
-
-
-
-
-                    <div class="album py-5" data-section="listSection">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h2 class="txtCenter" data-content="2">Events</h2>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <hr>
-                                <div class="col-md-4 animated fadeIn" data-beat="1">
-                                    <div class="list-group" id="eventTitleBtListTarget">
-                                        <!--<span></span>
+                            <div class="col-md-4 animated fadeIn" data-beat="1">
+                                <div class="list-group" id="eventTitleBtListTarget">
+                                    <!--<span></span>
                                     
                                     <button type="button" data-num="0"
                                         class="list-group-item list-group-item-action active">Duck Creek Golf Club</button><span></span>
                                         
                                         <button type="button" data-num="1" class="list-group-item list-group-item-action">Drinks Saloon</button>-->
 
-                                    </div>
                                 </div>
-                                <div class="col-md-4 animated fadeIn" data-beat="2">
-                                    <h2 id="eventTitleTarget"><!--Duck Creek Golf Club--></h2>
-                                    <ul class="noStyle">
-                                        <li id="eventDateTimeTarget">9:00 am Shotgun Start Friday November 7th</li>
-                                        <li id="eventAddressTarget">2800 Diamond Oaks Dr. Garland, TX 75044</li>
-                                        <li id="eventContactTarget">(214) 440-2229</li>
-                                        <li id="eventDetailsTarget">
-                                            <p>Cost per person $100. Please pay early so we can guarantee you a spot.
-                                                You
-                                                can Paypal the
-                                                money to <u><a
-                                                        href="mailto:mbier@apollostaffing.com">mbier@apollostaffing.com</a></u>
-                                                or
-                                                Venmo <u><a href="https://account.venmo.com/u/Mark-Bier"
-                                                        target="_blank">@Mark-Bier.</a></u>.</p>
-                                            <p>Please RSVP if you will be attending one or both events.</p>
-                                            <p>We could use some help in getting raffle prizes. So if you would like to
-                                                help
-                                                just let me
-                                                know.</p>
-                                            <p>Look forward to seeing everyone again.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 animated fadeIn" data-beat="3"><iframe id="eventMap" src=""
-                                        allowfullscreen=""></iframe></div>
                             </div>
-                            <hr>
+                            <div class="col-md-4 animated fadeIn" data-beat="2">
+                                <h2 id="eventTitleTarget"><!--Duck Creek Golf Club--></h2>
+                                <ul class="noStyle">
+                                    <li id="eventDateTimeTarget">9:00 am Shotgun Start Friday November 7th</li>
+                                    <li id="eventAddressTarget">2800 Diamond Oaks Dr. Garland, TX 75044</li>
+                                    <li id="eventContactTarget">(214) 440-2229</li>
+                                    <li id="eventDetailsTarget">
+                                        <p>Cost per person $100. Please pay early so we can guarantee you a
+                                            spot.
+                                            You
+                                            can Paypal the
+                                            money to <u><a
+                                                    href="mailto:mbier@apollostaffing.com">mbier@apollostaffing.com</a></u>
+                                            or
+                                            Venmo <u><a href="https://account.venmo.com/u/Mark-Bier"
+                                                    target="_blank">@Mark-Bier.</a></u>.</p>
+                                        <p>Please RSVP if you will be attending one or both events.</p>
+                                        <p>We could use some help in getting raffle prizes. So if you would like
+                                            to
+                                            help
+                                            just let me
+                                            know.</p>
+                                        <p>Look forward to seeing everyone again.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 animated fadeIn" data-beat="3"><iframe id="eventMap" src=""
+                                    allowfullscreen=""></iframe></div>
                         </div>
+                        <hr>
                     </div>
-
-                    <div class="album py-5" data-section="contact">
-                        <div class="container">
-                            <div class="row animated fadeIn">
-                                <div class="col-md-12">
-                                    <h2 class="txtCenter" data-content="3">Contact</h2>
-                                    <hr>
-                                </div>
-
-                                <div class="col-md-12 d-flex justify-content-center">
-                                    <ul class="inline" data-contact></ul>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <hr><iframe class="contactMap"
-                                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBxvGBPN_lRhoYskabk_lZ5FAo4GIowU6I&amp;q=1401 N. Central Expressway Suite 208 Richardson, TX 75080"
-                                        allowfullscreen=""></iframe>
-                                </div>
-
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <footer class="footer py-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4 text-center">
-                                    <nav data-social></nav>
-                                </div>
-
-                                <div class="col-md-4">
-
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-
-
                 </div>
 
-        </div>
+                <div class="album py-5" data-section="contact">
+                    <div class="container">
+                        <div class="row animated fadeIn">
+                            <div class="col-md-12">
+                                <h2 class="txtCenter" data-content="3">Contact</h2>
+                                <hr>
+                            </div>
+
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <ul class="inline" data-contact></ul>
+                            </div>
+
+                            <div class="col-md-12">
+                                <hr><iframe class="contactMap" src="" allowfullscreen=""></iframe>
+                            </div>
+
+
+                        </div>
 
 
 
-        </main>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 text-center">
+                            <nav data-social></nav>
+                        </div>
+
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+    </div>
+
+
+
+
+
+    </main>
 
     </div>
     </div>
