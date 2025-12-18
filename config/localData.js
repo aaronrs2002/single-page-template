@@ -74,20 +74,7 @@ const data = [{
             "teaserTitle": "Contact"
         }
     ],
-    /* "about": [
- 
-         {
-             "media": [
-                 "img/DaveAndDaughter1.jpg",
-                 "img/dave2.jpg",
-                 "img/dave4.jpg",
-                 "img/dave3.jpg"]
-             ,
-             "aboutText": "<p>My friend Dave Wilson was in a life altering accident in November 2014. A lady ran a stop sign and Dave's Life changed forever. Not just for Dave...who is now a quadriplegic but for Dave's precious daughter Ella Kate. And for David's entire family.</p><p>The medical expenses have piled up and Dave's family needs help.</p><p>Myself and a few others organize a yearly fundraiser. We will be hosting a Fundraising Golf Tournament at Duck Creek Golf Club Garland, TX Friday November 7th 9:00 AM and then at 7:00 PM that evening we will be hosting a fundraising happy hour at Drinks Saloon  in Richardson where we will be selling raffle tickets for prizes where the proceeds will go entirely to Dave.</p><p>Please RSVP if you will be attending one or both events.</p><p>We could use some help in getting raffle prizes.  So if you would like to help just let me know.</p><p>Look forward to seeing everyone again.</p><h4><u><a href=\"https://www.paypal.me/MarkBier?locale.x=en_US\" target=\"_blank\"> Donate: <i class=\"fab fa-paypal\"></i></a></u></h4>",
-             "aboutTitle": "Dave"
-         }]
- 
-     ,*/
+
     info: [
         {
             section: 0,
@@ -136,53 +123,6 @@ const data = [{
 
 
 },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {
 
@@ -297,14 +237,58 @@ const data = [{
         {
             section: 2,
             title: "Pete",
-            HTMLcontent: `<div data-equalize="0" class="col-md-6"><p>I'm Pete. I really do not like other dogs. My parents have taken me to fundraisers with other bassets and I tend to hang out in the bushes. I'm big on digging massive holes in your yard then laying in them. When I was five I was found in the desert. Nobody really knows my story. I was down to 25 lbs and had valley fever. I was brought to&nbsp;Arizona Basset Hound Rescue where they spent the time and money to help me back to health. I was given a new lease on life.</p></div><div data-equalize="0" class="col-md-6" data-imgs='2'>pete image carouselgoes here</div>`,
+            HTMLcontent: `<div data-equalize="0" class="col-md-6"><p>I'm Pete. I really do not like other dogs. My parents have taken me to fundraisers with other bassets and I tend to hang out in the bushes. I'm big on digging massive holes in your yard then laying in them. When I was five I was found in the desert. Nobody really knows my story. I was down to 25 lbs and had valley fever. I was brought to&nbsp;Arizona Basset Hound Rescue where they spent the time and money to help me back to health. I was given a new lease on life.</p></div><div data-equalize="0" class="col-md-6" data-imgs='2'></div>`,
             media: [
                 "https://lh3.googleusercontent.com/pw/ACtC-3cSKKOAZ-uhRbMPiEoi5b6EgQQfE2wsWE3u4-uqiipu-_yNCAy2Gd2ADAtiAZBJl_EPcsdxwR-Pdcs9ruLiFkL_ikbbprufbGumxxJgP5riXpnbvbxvsDr3pylYgy0k0Yb7dJ-ZEVYP80z4pIZUNHhy=w600-h450-no?authuser=0",
                 "https://lh3.googleusercontent.com/pw/ACtC-3e3Ps6Gb9BReiqVxNRW3_otMt4x4pfc8nD7N6roiGB6JmsE4nuT0RXW59Dp3i7IXarT9Exm9gdcPqOLKYsuRvCDD2XLuKNXj9MiXTPbEQxSDXg8Iz-T1oQiWJ675RxajMp0ldnV9323W36lLsJ_flei=w1069-h798-no?authuser=0",
                 "https://lh3.googleusercontent.com/pw/ACtC-3dL0PE3lDpCeZCWhHbACmBojQtrucCTBpa2DOjruWLfMF70T6ONzy8AB93vevYDHrAnJR0zejCxq1-f8u6ZYlblWafbEYxsxD1fwmls5BkfOM-pYOYldChZy1qFyk3c0h8RVDstpUN021I52neVZbEl=w1064-h798-no?authuser=0",
                 "https://lh3.googleusercontent.com/pw/ACtC-3cKpLp1HL3DMDw9dN0VAic-oGui_tI0mtShuPYsV9-Frnxfz3IY4Iw5qz3Scvwz4lukn1SeOg1MZJPJoN7d1xYxOuQ8w34l-HDEDpFH9mJC8FZdt-xIw8P1L5yFdjEU_0c2_xsF2hGGJpSp5BaQaTeuRQ=w409-h317-no?authuser=0"
             ]
+        },
+        {
+            section: 3,
+            title: "Hank",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6"><p>By god, you will remember meeting me. My first move is to forcefully shove my snout into your ass. Next, I will definitely jump on you and will need around 30 seconds of your time. Then I'm off to wherever my nose takes me. I absolutely love other dogs and can almost keep up with them. </p><p>My favorite hobbies include doing very random darting in any direction and rolling in other dog's poop. I am very unpredictable.</p></div><div data-equalize="0" class="col-md-6" data-imgs='3'></div>`,
+            media: [
+                "https://lh3.googleusercontent.com/pw/ACtC-3enswH250nqNlf9xC69kN7RPAqbL6cc0nb07OovxdZ2Ib1JxNHa4wUp_Jz1zNTIyKcVq2Zh9aAx7YYM8B1V1l6BaXmLHriSYyWIWD-UXIul-nH85QIsF_C8yvr7oh_FXgiNc3JLX6HAb4xDLbQR0s3r8w=w988-h741-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3cdQC5Q6Rk8Skr37d5vwIC_J25ifjJq_wSgTtFEUsi_YSDgaoAAMnLNgKBhOiajEm4jS5TxTMEFZkQHV2y2MJnNyA2XGwe5ApP6iYtYJKgcm1mgSHoNxHU_y8-XA45W3BoAT_R7kRsku5YodXO_vXkFbw=w988-h741-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3ddBmXyYB2xrllTbxY7aLAwMI5kM826Wx2G6vapzS9JgE_QSYnPuU5t8KdsNb5jKm9Jg3fyaK0n8LzOtE-0NJMWcvr990k0ax1xwy71w8IYnYR6gPmcw3i4vp8Bf6PTxbT9SB6vcyk8WqWwA8VZq_SvKw=w988-h741-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3cTcmZdl2RnO2oGrNXDgI0A0dxJF3bwHX8SrZaE-6itroLFPGEgsGOCEAdV08FhVAE-xroj-XdZbBymx6Jne9nlOQDMD_SoEjZx1TjxwRoUKFrjzinZnd3FEr1xL3AqV7Nf7Y1MXVt_bLF9-0ASvpVXZA=w1064-h798-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3cf2wb-cj3Jy9XTrAq_7U2qAw-c5OZDibRAwWVbZdmLR3CCitIsYnUfELekhASLdHVIeSkz-SFmZqqQoW_jKASpCryqsHWdMECcMQedGETCeW7jKmzi3pL3P3TCkab2TS1NYXA_mRY6_Rb1bCYGCq7zYA=w1064-h798-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3cATKrv3rDerYQdFJk51XmQtabF5hKElcy6LXFHSxHWetNK5uZn8ifZTwUSHXzhHZ7SozZh86xNghFwPFIVlLWTr8v7_RG-RhUwzsTNfDFhhyrhPI0UsqOehuOfEHffwebeYq0_m-A7VJ8uw7LLTDbW_A=w1064-h798-no?authuser=0"
+            ]
         }
+        ,
+        {
+            section: 4,
+            title: "Ellis",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6"><p>I'm Ellis. I am the most loyal animal you will ever know. One day my humans put the neighbors dog in my yard. That dog chewed through the fence and was off to see the world. I ventured out to the front porch to await my humans return. I had the pleasure of being a part of 3 generations of the \"Smith Family.\" They are my people.</p></div><div data-equalize="0" class="col-md-6" data-imgs='4'></div>`,
+            media: [
+                "https://lh3.googleusercontent.com/YC3UunsvI_IwyNxY2T1adPf6zCnsdjUHPm7-_i6xUGaMxokxtCm9b34OkQ8S0Z7Z2RmlC660_ZOysNLE5MMN9seXoIhxjFJC2qUnu6KhF2GNU0kTn4hz0UDEnYw1jbBp7na9ZlPrWRf-9TMNxb2Nt1lC8Ul91LWo5HuGx3zL-E-9_7HIaW8DboK6r13j7Xk-WhFS-uhfA6F1dNxmfG6kExeCd_wo5PCPbDWoSUfGtvlJj9a-kcKlGXLS7mkm5mZDSEMZageR4HGDqBNeY3ADktxljpS06MX711wZBCAIG7_opCofjIn2__gkgY1gevm2KDw-QEfVTgOJgOrdxWVg0v4aRv-emEdc2dI5lCI8SWxVcw-xrABe8j59QPqMIjxW5tHP3Wd43VlAPkhN_bDDuTjhh4WjJdSLRDMkEISEyKrlVr57jg3eSw5S2zVET5afr14y4mjUZvD-smTCz64iBP1ehDLqR3jKpdEPVgpZwA0kOTwn49QQW8psKTIdY0ekLNhhhFbSH5w4fShv-4KnXcM3IaDRXri9RzFR4J3WF862QgYVBBg6PT1PlQqehCf0KlqmyYzLOjKDUhAmibPlryLDkCH5CWllT0UbbICVzg2bhdRxPgCTAgMDorRrfDuVv6kW97EuWdui9ZisatD2j9uNaxIpav5fwkAzdQtNpIncOFNC0JuUx5ZZdWkolX0=w920-h741-no?authuser=0",
+                "https://lh3.googleusercontent.com/I-LNyX-4q9cty5-vViH-HrY7mIvzh-fW2dZfVzt-BsMuppsa8DVvK8GSKfjr_hxeDxpJXbiQTLIiHxI1_dJApHaDNoSRKZxxKUZz9qkdV-pSbH33q2sSD82XIKyVjgGO4nJTc185UgPB45NUzdXc0ewUxgImDBc3HkpTnt32BgrqvhcnASfScJoHEgEQG8IUOZtKGSTI6h3bGBJjsTBjWqOoA3vUnf2EK0OSCh-44cOdmUDfKwGGEu2F0o0Ugw-_gW_Azez_cGPF0btOELfxe2PgRtZ_3V2qwP7qcKs9hEJggAIcOJJfyjy3KSui0OV8wFX6eZbwa_5zGLh0_FUFHKiCGbffNw4AqQsJWId6Eh5emKUE03ZUWnSkqiLQ-LKED36hgjTgyIjAV3vCnHan_sP64EXc7ID3TJz7btpKfaCbXXr8uLzwk3wT1uJlw_zQQlqA91VRzThGF16oNuxKgGV4WTACMo_d28aFEKR7X4zf5ORnwS2AJevzer42SZWu8FvAcH_b_uDNtU3ozMhrOURk5nDFeTwGRSl2TpjTKJ5OZkxRRZvELwC-E8hTOBs4P1eRKGXeuD_wDkHf3QgGG91D-54KbooPcmv_5_JOEe9iV7OwDld2fBu5JJwDPR7tRbyA4Tx1yJCCsevvvRNPjeMlRwsjbIaWkE0yZPWFUZQecVkQvBaLKgtxRAH_34w=w431-h293-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3c1dTNHTwYferDDVDqGIlM8UFApIWchYGjfGqEHdfgoQEdR1trbihPEAjdCDPo8xlX4uwhUyZQAJWHwkccj-juq88QMjlt9q7OplwHRBkMcDeFJvTwf8EA86jGVT1fK5_GU6142_-pyDNhR_URTvbSQLg=s535-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3ftjEJ-vsatiJNYFOWcM-i7r3G7nxiAt1FNLKYnEGcjib4wz_YU-4fTadkLi7PG7E9htRY8Rzcf3yOAQv7erCO-8jrnwi9OLJoXMDa5huoDuR2qB6G34buHQwERBncHdJinagaDWiwDXAg1s2JjTMkp8A=w1111-h741-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3d5iqqPIw1AaOLaJvwzR6BarSpNoSIvdP1OouNgx7Pi5PPKFD5Ps7OPSikX5jMNlElX16rHrdBpXuCS8W-bM7VXhsPNgwdleKeZGtohlONOjwWgBysbDLlww2P2dSEtQ_9KO2ZDA7KTvzEnEU--9hmCmw=w498-h746-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3eVoVtNj9fVE-oKxRyded1yY62up1k8UMQPvhUsKUt7k2603-QNq9HcDl0NIPYPhhIP3d1aq70ovDITBMs6YUQj6ywScaIMLx09QcYbArt3zme9mREZtUIoQEni1uNpF7cqAQyq3D9Me4dzxduB_J8msw=w1113-h746-no?authuser=0"
+            ]
+        }
+        ,
+        {
+            section: 5,
+            title: "Dax",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6"><p>I was purchase by this nice young couple with a little boy I could play with. Wouldn't you know it, that couple eventually had another little boy who promptly started riding me like a horse. I don't mind, he's pretty light. We live next to these people I can hear and smell. One day, my humans cut a hole in the fence and now I get a chance to get to know the owners of those smells first hand through my \"fence window.\" Wow, I never thought I would be so popular.</p></div><div data-equalize="0" class="col-md-6" data-imgs='5'></div>`,
+            media: [
+                "https://lh3.googleusercontent.com/pw/ACtC-3fuREVXm7iL2TrCO9LQ04ZE9a-fs9OdEpQtTEopW7H8UxOXmpQC1h_h1JlIuq4sqdeNd95SfxCGM3qm8PsyMa6wYqiIM4DLVkIs9BPNTEbHiTxK6shGRSy2rXYrsk-BxLuOr_KJwztiF8exADY-cCfPaA=w705-h741-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3f2LJjra4go2YpIgkw_LItz3ovelHo6dExK1x7YGjPHWHXC3fxsbWXFmFRBUfBQtYcaC9FijiVau5QUMN7Vp8YV6vdKWqMBaBUjEgkBZoiCXPnoNlhwLrQORhOeqK_Az1RWAuuE-oV6I7HWDRbORT22fw=w1107-h746-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3d41ccDjfj_NRHb9zLEmWVg9ndEqpmG7-2v3eWxpHEOrRBf3NpEBHPpRtW3RspseE2KqtSv1UGOBgcb7iteKwKW0PMAY9SLceDU0F4FYtJ9CN4qNK6TbbJJ-9VYBGj5Vftr-ibonRoXYc7I-xCRiMynqA=w947-h746-no?authuser=0",
+                "https://lh3.googleusercontent.com/pw/ACtC-3dcNwCgC11vBhEIoZAuxGNz7STAbphORGd82qh123s3xNdvfewzXa_yhG4qIN9QtizN24mgfcZDD6zXDF1bDjSoMcEoXIDRHSNHR_JIGhl9utWAEauADtiMvJmt2N9Eg8ussQ3kx5OqYgx0eAS7jiBPbQ=w742-h741-no?authuser=0"
+            ]
+        }
+
+
+
+
+
     ],
     "events": [
         {
@@ -330,6 +314,57 @@ const data = [{
         }
     ],
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 
@@ -338,7 +373,7 @@ const data = [{
 
 
 
-let activeBusiness = 0;
+let activeBusiness = 1;
 
 let teasersHTML = "";
 
@@ -375,6 +410,7 @@ for (let i = 0; i < data[activeBusiness].info.length; i++) {
     infoIntro = `<div class="container"><div class="row"><div class="col-md-12"><h2 class="txtCenter">${data[activeBusiness].info[i].title}</h2><hr></div></div></div>`;
 
     document.querySelector("[data-section='" + data[activeBusiness].info[i].section + "'] .target").innerHTML = infoIntro + `<div class="container"><div class="row equalize1">` + data[activeBusiness].info[i].HTMLcontent + `</div></div>`;
+    document.querySelector("[data-section='" + data[activeBusiness].info[i].section + "'] .target").classList.remove("hide");
 
 }
 
