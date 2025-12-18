@@ -302,8 +302,12 @@ function carouselMove(direction, media, mediaNum) {
     }
 
 
-    if (media === "images") {
-        imageAddresses = [data[activeBusiness].info[i].media[mediaNum]];
+    if (media === "image") {
+        imageAddresses = data[activeBusiness].info[mediaNum].media;
+
+
+    } else {
+        ytVideos = data[activeBusiness].info[mediaNum].media;
     }
 
 
