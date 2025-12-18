@@ -371,35 +371,14 @@ let blogData = "Default blog data";
 let activePost = 0;
 let blog = [];
 
-
-/*
-                                    <h1 id="activeBlogTitle">Active Blog Title</h1>
-                                    <hr /><i id="activeBlogPubDate">pubDate</i>
-                                    <div id="activeBlogDescription"></div>*/
-
-
 function viewPosts(direction) {
     console.log("viePosts: drection: " + direction);
 
-    if (config[activeRestaurant].blogAddress.length === 0) {
-        document.getElementById("blogSection").classList.add("hide");
-        return false;
-    }
-    /*   [].forEach.call(document.querySelectorAll(".post[data-num]"), function (e) {
-         e.classList.add("hide");
-       });
-       if (document.querySelector(".fadeIn")) {
-         [].forEach.call(document.querySelectorAll(".fadein"), function (e) {
-           e.classList.remove("fadeIn");
-         });
-       }
-   */
+
     const blogLength = blog.length;
     if (blogLength > 0) {
         document.getElementById("blogSection").classList.remove("hide");
     }
-
-    //let visibleCards = activePost / blogLength;
     if ((typeof direction) === "number") {
         activePost = direction;
     } else {
@@ -435,7 +414,6 @@ function viewPosts(direction) {
 }
 
 
-
 async function getBlog(url) {
     try {
         const response = await fetch(url);
@@ -445,10 +423,7 @@ async function getBlog(url) {
         }
         const data = await response.json();
         console.log("JSON.stringify(data): " + JSON.stringify(data))
-
         return data;
-
-
     } catch (error) {
         document.getElementById("blogSection").remove();
         console.log("Error: " + error);
@@ -456,33 +431,21 @@ async function getBlog(url) {
     }
 }
 
-
 async function start() {
     const urlStart = data[activeBusiness].rss;
-
-
     let phpRelayAddress = "https://mechanized-aesthetics.net/php-relays/any-restaurant-blog-address.php?q=";
-
     if (urlStart.length === 0) {
         document.getElementById("blogSection").remove();
         console.log("urlStart.length: " + urlStart.length);
     } else {
         try {
-
             blog = await getBlog(phpRelayAddress + urlStart);
-
-            console.log("We changed restaurants(typeof blog): " + (typeof blog));
-
             viewPosts(0);
-
 
         } catch (error) {
             console.log("Error: " + error)
         }
     }
-
-
-
 }
 start();
 
