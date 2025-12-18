@@ -93,33 +93,70 @@
             <div class="container-fluid">
 
 
-                <div class="row justify-content-md-center" data-section="0" data-content="0">
+                <div class="row justify-content-md-center hide" data-section="0" data-content="0">
                     <div class="album py-5 animated target"></div>
                 </div>
 
 
 
-                <div class="row justify-content-md-center" data-section="1" data-content="1">
+                <div class="row justify-content-md-center hide" data-section="1" data-content="1">
                     <div class="album py-5 animated target"></div>
 
 
                 </div>
 
-                <div class="album py-5 animated target" data-section="2">
+                <div class="album py-5 animated target  hide" data-section="2">
                     <div class="album py-5 animated target"></div>
                 </div>
 
 
-                <div class="album py-5 animated target" data-section="3">
-                    <div class="album py-5 animated target hide"></div>
+                <div class="album py-5 animated target hide" data-section="3">
+                    <div class="album py-5 animated target"></div>
                 </div>
 
-                <div class="album py-5 animated target" data-section="4">
-                    <div class="album py-5 animated target hide"></div>
+                <div class="album py-5 animated target hide" data-section="4">
+                    <div class="album py-5 animated target"></div>
                 </div>
 
-                <div class="album py-5 animated target" data-section="5">
-                    <div class="album py-5 animated target hide"></div>
+                <div class="album py-5 animated target hide" data-section="5">
+                    <div class="album py-5 animated target"></div>
+                </div>
+
+                <div class="album py-5 animated target hide" id="blogSection">
+                    <div class="album py-5 animated target">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="my-3 capitalize txtCenter">Blog Posts
+                                        <span data-activepost></span>/
+                                        <span data-blogmax></span>
+                                    </h2>
+                                    <hr />
+                                </div>
+                                <div class="col-md-12">
+                                    <h1 id="activeAndTotal"> </h1>
+                                    <div class="btn-group btn-block">
+                                        <button type="button" class="btn btn-secondary" onClick="viewPosts('Previous')">
+                                            Previous Post
+                                        </button>
+
+                                        <button type="button" class="btn btn-secondary" onClick="viewPosts('Next')">
+                                            Next Post
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <h1 id="activeBlogTitle">Active Blog Title</h1>
+                                    <hr /><i id="activeBlogPubDate">pubDate</i>
+                                    <div id="activeBlogDescription"></div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="album py-5" data-section="listSection">

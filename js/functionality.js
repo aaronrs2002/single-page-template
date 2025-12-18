@@ -144,8 +144,14 @@ function selectEdit(num) {
 [].forEach.call(document.querySelectorAll("[data-imgs]"), (e, i) => {
     /* <div  style="background-image: url('${data[activeBusiness].info[i].media[0]}')" class="img-fluid"  id="imageCarouselTarget-${i}" ></div>    */
 
+    let showMultiple = "hide";
+    if (data[activeBusiness].info[i].media.length > 1) {
+        showMultiple = "";
+    }
+
     e.innerHTML = `
-                <div><img src="${data[activeBusiness].info[i].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${i}" /></div>                 
+                <div><img src="${data[activeBusiness].info[i].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${i}" /></div>     
+                <span class="${showMultiple}">            
                 <label class="sliderIndexCounter">Image:<span id="imageCounter-${i}"></span></label>
 
                     <ul class="carouselIndexParent txtCenter" data-carousel="image" id="indexIcons-${i}"></ul>
@@ -163,6 +169,7 @@ function selectEdit(num) {
                         </li>
 
                     </ul>
+                    </span>
 `
 });
 
@@ -235,7 +242,7 @@ function setVideoActive(num, mediaNum) {
         imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + i + ")' ></li>";
     }
 
-    console.log(`imageIndexStr` + imageIndexStr);
+
 
     if (document.querySelector("#indexIcons-" + i)) {
         document.querySelector("#indexIcons-" + i).innerHTML = imageIndexStr;
@@ -357,3 +364,125 @@ function scrollWindow(num) {
         .scrollIntoView({ behavior: "smooth" });
 
 }
+
+/*START BLOG RSS*/
+
+let blogData = "Default blog data";
+let activePost = 0;
+let blog = [];
+
+
+/*
+                                    <h1 id="activeBlogTitle">Active Blog Title</h1>
+                                    <hr /><i id="activeBlogPubDate">pubDate</i>
+                                    <div id="activeBlogDescription"></div>*/
+
+
+function viewPosts(direction) {
+    console.log("viePosts: drection: " + direction);
+
+    if (config[activeRestaurant].blogAddress.length === 0) {
+        document.getElementById("blogSection").classList.add("hide");
+        return false;
+    }
+    /*   [].forEach.call(document.querySelectorAll(".post[data-num]"), function (e) {
+         e.classList.add("hide");
+       });
+       if (document.querySelector(".fadeIn")) {
+         [].forEach.call(document.querySelectorAll(".fadein"), function (e) {
+           e.classList.remove("fadeIn");
+         });
+       }
+   */
+    const blogLength = blog.length;
+    if (blogLength > 0) {
+        document.getElementById("blogSection").classList.remove("hide");
+    }
+
+    //let visibleCards = activePost / blogLength;
+    if ((typeof direction) === "number") {
+        activePost = direction;
+    } else {
+
+        if (direction === "Next") {
+            activePost = activePost + 1;
+            if (activePost >= blogLength) {
+                activePost = 0;
+            }
+
+        } else {
+            activePost = activePost - 1;
+            if (activePost < 0) {
+                activePost = blogLength - 1;
+            }
+        }
+    }
+
+    document.querySelector("[data-activepost]").innerHTML = (Number(activePost) + 1);
+    document.querySelector("[data-blogmax").innerHTML = blogLength;
+
+    document.getElementById("activeBlogTitle").innerHTML = blog[activePost].title;
+    document.getElementById("activeBlogPubDate").innerHTML = blog[activePost].pubDate;
+    document.getElementById("activeBlogDescription").innerHTML = blog[activePost].description;
+    if (document.querySelector(".post[data-num='" + activePost + "']")) {
+        document
+            .querySelector(".post[data-num='" + activePost + "']")
+            .classList.remove("hide");
+        document
+            .querySelector(".post[data-num='" + activePost + "']")
+            .classList.add("fadeIn");
+    }
+}
+
+
+
+async function getBlog(url) {
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`error: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("JSON.stringify(data): " + JSON.stringify(data))
+
+        return data;
+
+
+    } catch (error) {
+        document.getElementById("blogSection").remove();
+        console.log("Error: " + error);
+        throw error;
+    }
+}
+
+
+async function start() {
+    const urlStart = data[activeBusiness].rss;
+
+
+    let phpRelayAddress = "https://mechanized-aesthetics.net/php-relays/any-restaurant-blog-address.php?q=";
+
+    if (urlStart.length === 0) {
+        document.getElementById("blogSection").remove();
+        console.log("urlStart.length: " + urlStart.length);
+    } else {
+        try {
+
+            blog = await getBlog(phpRelayAddress + urlStart);
+
+            console.log("We changed restaurants(typeof blog): " + (typeof blog));
+
+            viewPosts(0);
+
+
+        } catch (error) {
+            console.log("Error: " + error)
+        }
+    }
+
+
+
+}
+start();
+

@@ -39,6 +39,7 @@ const data = [{
 
         }
     ],
+    rss: "",
     "jumbotronHeading": "DAVE WILSON 9th ANNUAL FUNDRAISING EXTRAVAGANZA",
 
     "jumbotronImg": "img/golfBallCloseUp.jpg",
@@ -160,11 +161,12 @@ const data = [{
         },
         {
             title: "donate",
-            href: "https://www.paypal.me/MarkBier?locale.x=en_US",
+            href: "https://azbassetrescue.org/support/#donate",
             icon: "fa-donate"
 
         }
     ],
+    rss: "https://our-basset-hounds.blogspot.com/feeds/posts/default?alt=rss",
     "jumbotronHeading": "Our Hounds Through The Years",
 
     "jumbotronImg": "https://lh3.googleusercontent.com/pw/ACtC-3dWShOMXYK791jVBgzkDfTpOGqdhpjLYpuictKOofYwB1kWmc7hBVPDrh40B0f6FIaqlpbEWSV4Z8o6Kc3bh-0h2sqTYuNAIiTd60sQrKx-mIBe4iKc1GR2UtKysbfHMBoa1ZvfGXi7Lz91aGqDw5UkGw=w713-h318-no?authuser=0",
@@ -313,7 +315,7 @@ const data = [{
             "title": "Main Event – Playtime for our January Angel!"
         }
     ],
-}
+},
 
 
 
@@ -363,8 +365,162 @@ const data = [{
 
 
 
+{
+
+    title: "The Rockers",
+    map1: "AIzaSyBxvGBPN_lRhoY",
+    map2: "skabk_lZ5FAo4GIowU6I",
+    contact: {
+        address: "1 Cardinals Dr, Glendale, AZ 85305",
+        addressIcon: "fa-home",
+        phone: "777-888-9090",
+        phoneIcon: "fa-phone",
+        email: "rockers@fakemail.com",
+        emailIcon: "fa-envelope"
+
+    },
+
+    social: [
+        {
+            title: "instagram",
+            href: "https://www.instagram.com/aaronrs2002/",
+            icon: "fa-instagram"
+
+        },
+        {
+            title: "linkedin",
+            href: "https://www.linkedin.com/in/aaronrs2002/",
+            icon: "fa-linkedin"
+
+        },
+        {
+            title: "youtube",
+            href: "https://www.youtube.com/@web-presence-developer",
+            icon: "fa-youtube"
+
+        },
+        {
+            title: "donate",
+            href: "https://azbassetrescue.org/support/#donate",
+            icon: "fa-donate"
+
+        }
+    ],
+    rss: "",
+    "jumbotronHeading": "Some Band",
+
+    "jumbotronImg": "https://lh3.googleusercontent.com/pw/ACtC-3e7X5T0euimrhv3rHvmLkN1V1xCEeHSHHuUDSllwOvZhqBVlPd1xxdDb7D47L8NbKUrlwpU7tSpKUGZ8t1yn3eIA7gV5V6nA1hs2YOQSnyKcKKK6odeBtqnEq-2JVyHUrO_khHyqsLcWdust6k_U9fggw=w1600-h546-no?authuser=0",
+
+    "jumbotronLead": "Rock music is a broad genre of popular music that originated as \"rock and roll\" in the United States in the early 1950s.",
+    "teasers": [
+        {
+            "focusTeaser": "Unique Sound",
+            "id": 0,
+            "teaserImg": "https://lh3.googleusercontent.com/pw/ACtC-3cD6M6Kx8ociwZZ7imZP910nz5yOgZ-QUVGDNxbhWzJg-UlfJrjDZQ2a-JoI6MVVCBF7xJimFjQtjq67NZ2_Yopn4tu73ye1N5bSfxjg7AmcPaN3JviJUTidYjupvzN9YV7-SYxMDet8x7j7YuK4B73-A=s500-no?authuser=0",
+            "teaserText": "Why we are unique.",
+            "teaserTitle": "The Sound"
+        },
+        {
+            "focusTeaser": "Find Out More!",
+            "id": 1,
+            "teaserImg": "https://lh3.googleusercontent.com/pw/ACtC-3ekzBHwkKrPcPfSFs2z2EDAEIlqL8iHJedooJy47j1az3d0QOM0SK5xOY1l4A_SVs2p9dwzrXcAz1jtEDLrhz1bGz27a1XLt0hX8FS551dsVw3HRpnN-YOWU6AFY1xZP2JJ8NofmKDle3glqEBve4WOOw=s500-no?authuser=0",
+            "teaserText": "Why we do this. Our message.",
+            "teaserTitle": "Our Story"
+        },
+        {
+            "focusTeaser": "Live Events",
+            "id": 2,
+            "teaserImg": "https://lh3.googleusercontent.com/pw/ACtC-3fYMeKVS4mAC7pC0BE_Z4iQws2BNdhXKs67Kqj1RLwLCbfdNrOIK4aIg44kLgLeS1DaKDPoMwatCMpmM1zALKdndLlXU8b6Y0DD7ZB4pC5CNyhQ9qJBgBtb82oosAnNCmdGIond6sAQFSIj0_sUi9XR0Q=s500-no?authuser=0",
+            "teaserText": "We're coming to your town!",
+            "teaserTitle": "See us live"
+        },
+        {
+            "focusTeaser": "Blast out to us",
+            "id": 3,
+            "teaserImg": "https://lh3.googleusercontent.com/pw/ACtC-3d23nNmGGnYisXEjD2ypRx5ZXEgkrQbSovyZdxPjwcTjvAHapbSkIW6TrVJALRPX1DA2rmnbKUrnGNmUf9N4It6KbQxvG9EMyO65Pt0eFVR-xx9NYPcs0Hwu8vGp7O1gZPM8_vg568X129WaHsNlCopSg=s500-no?authuser=0",
+            "teaserText": "Contact our agent for info.",
+            "teaserTitle": "Call Out"
+        }
+    ],
+
+    info: [
 
 
+        {
+            section: 0,
+            title: "Our Sound",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6"><p>A record producer or music producer oversees and manages the sound recording and production of a band or performer's music, which may range from recording one song to recording a lengthy concept album. A producer has many, varying roles during the recording process.They may gather musical ideas for the project, collaborate with the artists to select cover tunes or original songs by the artist/group, work with artists and help them to improve their songs, lyrics or arrangements.</p></div><div data-equalize="0" class="col-md-6" data-imgs='0'></div>`,
+            media: ["https://lh3.googleusercontent.com/pw/ACtC-3d5YIVrgSAbWtVH2LovFwhdex4J3n2hixNQLKSkTIP5YMvtb7FKA1ctWs5Rg5E1duxgDzmf8dibRIdOwsjV9ZWp3YWvZZW2toi7TfHxjc_QSYstZuVm2SY_kGWacy3gP1h_1hrPDe-TZwokOf1g8JQ96Q=w1098-h688-no?authuser=0"]
+        },
+
+        {
+            section: 1,
+            title: "Aaron",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6" data-imgs='1'></div><div data-equalize="0" class="col-md-6"><p><u><a href=\"https://en.wikipedia.org/wiki/Rock_music\" target=\"_blank\"><u>Sound cloud</u></a></u></p><p> Ram lorem quam, vulputate luctus gravida eu, varius rutrum elit. Phasellus in ornare diam. Ut convallis commodo arcu, et lacinia lorem faucibus sit amet. Suspendisse in elit in arcu ornare tempor eu feugiat erat. Sed vestibulum felis sit amet nisi iaculis, in bibendum turpis finibus. Mauris eget nisl vitae arcu tincidunt porttitor. Proin convallis dictum consequat. Phasellus pellentesque mauris sed quam ultricies, ut aliquam purus egestas. Mauris id elementum nibh.</p><p><u><a href=\"https://www.web-presence.biz/\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.web-presence.biz/</a></u></p></div>`,
+            media: [
+                "https://lh3.googleusercontent.com/pw/ACtC-3dQJ4nt9RkFNtk5Gg0x29zKsJEky9OnsOnj4uG8-YS8XTKZFxRrG9lREPGmM4l67J6tsae4KXqYx7CwNrrodtawBIJykNW2Par1iCt0_GmpBTgUrP4Of-_7IMfrz2lM9Z4tedlk9QCMFOFhFkX-vO8jFA=w447-h460-no?authuser=0"]
+        },
+
+
+
+
+        {
+            section: 2,
+            title: "Joshua",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6" data-imgs='2'></div><div data-equalize="0" class="col-md-6"><p>Phasellus vulputate felis sollicitudin, congue turpis id, gravida turpis. Aliquam non ullamcorper magna. Curabitur ac nibh nec ante finibus malesuada. Mauris faucibus, est ut laoreet aliquet, nibh mauris posuere nibh, nec malesuada erat augue quis magna. Donec tempor maximus turpis, eget blandit lacus egestas at. Proin metus velit, pellentesque id nisl vel, lacinia dictum nisl. Sed nec tellus a orci posuere sagittis eu id ex. Nulla viverra porta ullamcorper. Etiam nisi augue, vehicula non nisl at, interdum ornare urna. Phasellus vitae vehicula lacus. Nullam lacus sem, auctor a odio in, lobortis porta dui. Morbi vulputate odio quis tincidunt fringilla. Maecenas quis hendrerit est. Nam viverra quis orci eu dapibus. Curabitur nec varius urna. Phasellus finibus ut quam sit amet pharetra.</p></div>`,
+            media: [
+                "https://lh3.googleusercontent.com/pw/ACtC-3d_LD1-MGBsBI6jl0q6GiWhTIxiM199GZ_Kg4GUm69S_7VrVeq6bChizvCdGquJW9DD1BkknUMTZ4XcOJ3ThleapIQeQSZ-1qIJf-zCMD2XJYdUAIc6JQmFkwnHAXoFHnK4y1SnH9wvJl6NSeNobd5Nsg=w1097-h746-no?authuser=0"]
+        },
+
+
+        {
+            section: 3,
+            title: "Mike",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6" data-imgs='3'></div><div data-equalize="0" class="col-md-6"><p>The drum is a member of the percussion group of musical instruments. In the Hornbostel-Sachs classification system, it is a membranophone.[1] Drums consist of at least one membrane, called a drumhead or drum skin, that is stretched over a shell and struck, either directly with the player's hands, or with a percussion mallet, to produce sound. There is usually a resonance head on the underside of the drum, typically tuned to a slightly lower pitch than the top drumhead. Other techniques have been used to cause drums to make sound, such as the thumb roll. Drums are the world's oldest and most ubiquitous musical instruments, and the basic design has remained virtually unchanged for thousands of years.</p></div>`,
+            media: [
+                "https://lh3.googleusercontent.com/pw/ACtC-3d8fH1wENUkq6iHTvw_FoWfeGoJklQ2SPaT0Hp8o5hzh3snOpeO5cN8Dm62IDq6yToGAyHuemBdBJsi0wulsWHMtOlQ5Pn02ofWTkP0H6cccXmMynxml3sRqLF7DAicCvciW_Zp89MpbADrbCjTRD14Dw=w1078-h721-no?authuser=0"]
+        },
+
+
+
+
+
+
+
+
+        {
+            section: 4,
+            title: "Our First Gig",
+            HTMLcontent: `<div data-equalize="0" class="col-md-6"><iframe class='img-fluid centerAuto img-thumbnail mediaComponent' data-type='video'  src='https://www.youtube.com/embed/i2uIVHyiwgI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div data-equalize="0" class="col-md-6"><p>Rock and roll (often written as rock &amp; roll, rock 'n' roll, or rock 'n roll) is a genre of popular music that originated and evolved in the United States during the late 1940s and early 1950s from musical styles such as gospel, jump blues, jazz, boogie woogie, rhythm and blues, and country music.[4] While elements of what was to become rock and roll can be heard in blues records from the 1920s and in country records of the 1930s, the genre did not acquire its name until 1954.</p></div>`,
+            media: []
+        }
+    ],
+    "events": [
+        {
+            "address": "Twins Way, Minneapolis, MN 55403",
+            "contact": "555-555-5555  or some@email.com",
+            "dateTime": "Wednesday - June 19, 2019 - 6:30PM",
+            "details": "<p>Fusce non erat et sem facilisis tristique. Vivamus erat sapien, ultrices ut dignissim sit amet, vehicula in mauris. Integer lobortis ex id lorem rhoncus sagittis. Aenean vulputate nulla vel mi faucibus lacinia!</p>",
+            "title": "Tampa Bay, FL"
+        },
+        {
+            "address": "1000 Ballpark Way, Arlington, TX 76011",
+            "contact": "222-444-4444",
+            "dateTime": "Thursday August 15 2019 7:00 PM - 10:00PM",
+            "details": "<p>Bring swim trunks and a towel. We will provide Pizza.</p>",
+            "title": "Richardson, TX"
+        },
+        {
+            "address": "1060 W Addison St Chicago, IL 60613",
+            "contact": "222-444-3331",
+            "dateTime": "Thursday August 15 2019 7:00 PM - 10:00PM",
+            "details": "<p>There will be hot dogs for sale. But, there will be NO MUSTARD!</p>",
+            "title": "Chicago, IL"
+        }
+    ],
+
+
+},
 ];
 
 
@@ -405,12 +561,13 @@ let pgSections = [];
 let sectionTitles = [];
 let infoTarget = "";
 for (let i = 0; i < data[activeBusiness].info.length; i++) {
+    document.querySelector(".hide[data-section='" + data[activeBusiness].info[i].section + "']").classList.remove("hide");
     let infoIntro = "";
 
     infoIntro = `<div class="container"><div class="row"><div class="col-md-12"><h2 class="txtCenter">${data[activeBusiness].info[i].title}</h2><hr></div></div></div>`;
 
     document.querySelector("[data-section='" + data[activeBusiness].info[i].section + "'] .target").innerHTML = infoIntro + `<div class="container"><div class="row equalize1">` + data[activeBusiness].info[i].HTMLcontent + `</div></div>`;
-    document.querySelector("[data-section='" + data[activeBusiness].info[i].section + "'] .target").classList.remove("hide");
+
 
 }
 
