@@ -16,7 +16,7 @@ for (let i = 0; i < data[activeBusiness].teasers.length; i++) {
                                 src="${data[activeBusiness].teasers[i].teaserImg}">
                         </div></div>`;
 
-    mobileTeasersHTML = mobileTeasersHTML + ` <li class="nav-item"><strong class="nav-link">${data[activeBusiness].teasers[i].teaserTitle}</strong></li>`
+    mobileTeasersHTML = mobileTeasersHTML + ` <li class="nav-item" onClick="scrollWindow('${i}')"><strong class="nav-link">${data[activeBusiness].teasers[i].teaserTitle}</strong></li>`
 }
 
 document.getElementById("teasers").innerHTML = teasersHTML;
