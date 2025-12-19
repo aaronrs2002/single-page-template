@@ -379,7 +379,7 @@ function carouselMove(direction, media, mediaNum) {
         }
     }
 }
-setImageActive(0, 0);
+//setImageActive(0, 0);
 /*START NAVIGATION*/
 function scrollWindow(num) {
     document
