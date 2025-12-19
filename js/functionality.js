@@ -139,39 +139,43 @@ function selectEdit(num) {
 
 
 
+let imageCarousels = [];
 
+[].forEach.call(document.querySelectorAll("[data-imgs"), (e) => {
+    imageCarousels.push(e.dataset.imgs);
+});
 
-[].forEach.call(document.querySelectorAll("[data-imgs]"), (e, i) => {
+for (let i = 0; i < imageCarousels.length; i++) {
     /* <div  style="background-image: url('${data[activeBusiness].info[i].media[0]}')" class="img-fluid"  id="imageCarouselTarget-${i}" ></div>    */
 
     let showMultiple = "hide";
-    if (data[activeBusiness].info[i].media.length > 1) {
+    if (data[activeBusiness].info[imageCarousels[i]].media.length > 1) {
         showMultiple = "";
     }
 
-    e.innerHTML = `
-                <div><img src="${data[activeBusiness].info[i].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${i}" /></div>     
+    document.querySelector("[data-imgs='" + imageCarousels[i] + "']").innerHTML = `
+                <div><img src="${data[activeBusiness].info[imageCarousels[i]].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${imageCarousels[i]}" /></div>     
                 <span class="${showMultiple}">            
-                <label class="sliderIndexCounter">Image:<span id="imageCounter-${i}"></span></label>
+                <label class="sliderIndexCounter">Image:<span id="imageCounter-${imageCarousels[i]}"></span></label>
 
-                    <ul class="carouselIndexParent txtCenter" data-carousel="image" id="indexIcons-${i}"></ul>
+                    <ul class="carouselIndexParent txtCenter" data-carousel="image" id="indexIcons-${imageCarousels[i]}"></ul>
 
                  
                     <ul class="inline txtCenter block">
                         <li>
                             <button type="button" class="btn btn-secondary mr-2 "
-                                onClick="carouselMove('previous','image',${i})">
+                                onClick="carouselMove('previous','image',${imageCarousels[i]})">
                                 <i class="fas fa-arrow-circle-left"></i> Image</button>
 
                             <button type="button" class="btn btn-secondary ml-2 "
-                                onClick="carouselMove('next','image',${i})">Image <i class="fas fa-arrow-circle-right"></i>
+                                onClick="carouselMove('next','image',${imageCarousels[i]})">Image <i class="fas fa-arrow-circle-right"></i>
                             </button>
                         </li>
 
                     </ul>
                     </span>
 `
-});
+};
 
 
 let whichTarget = [];
@@ -245,7 +249,6 @@ for (let i = 0; i < whichTarget.length; i++) {
 
 
     let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
-    console.log(`ytVideos: ` + ytVideos)
 
     // if (data[activeBusiness].info[whichTarget[i]].media[0].indexOf(".") === -1 && data[activeBusiness].info[whichTarget[i]].media[0].indexOf("/") === -1) {
     let activeVideo = 0;
@@ -300,6 +303,7 @@ videoIndexIcon-${i}
 
 
 function setVideoActive(num, mediaNum) {
+    let ytVideos = data[activeBusiness].info[mediaNum].media;
     activeVideo = num;
     [].forEach.call(document.querySelectorAll("#videoIndexIcon-" + mediaNum + " .sliderIndex[data-video]"), (e) => {
         e.classList.remove("active");
@@ -315,20 +319,22 @@ videoIndexIcon-${i}
 */
 ///START IMAGE CAROUSEL
 
-[].forEach.call(document.querySelectorAll("[data-carousel='image']"), (e, i) => {
+for (let i = 0; i < imageCarousels.length; i++) {
+
+    console.log("imageCarousels: " + imageCarousels);
 
 
-    imageAddresses = data[activeBusiness].info[i].media;
+    imageAddresses = data[activeBusiness].info[imageCarousels[i]].media;
     /*for (let j = 0; j < data[activeBusiness].info[i].media.length; j++) {
          imageAddresses.push(data[activeBusiness].info[i].media[j]);
          console.log("data[activeBusiness].info[i].media[j]): " + JSON.stringify(data[activeBusiness].info[i].media[j]));
      }*/
 
-
+    console.log("imageAddresses: " + imageAddresses);
     let activeImage = 0;
     let imageIndexStr = "";
-    if (document.getElementById("imageCounter-" + i)) {
-        document.getElementById("imageCounter-" + i).innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length) + " - " + imageAddresses[activeImage].substring(imageAddresses[activeImage].lastIndexOf("/"), imageAddresses[0].indexOf("."));
+    if (document.getElementById("imageCounter-" + imageCarousels[i])) {
+        document.getElementById("imageCounter-" + imageCarousels[i]).innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length) + " - " + imageAddresses[activeImage].substring(imageAddresses[activeImage].lastIndexOf("/"), imageAddresses[0].indexOf("."));
     }
 
     for (let j = 0; j < imageAddresses.length; j++) {
@@ -336,15 +342,15 @@ videoIndexIcon-${i}
         if (j === 0) {
             standardClass = 'sliderIndex active';
         }
-        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + i + ")' ></li>";
+        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + imageCarousels[i] + ")' ></li>";
     }
 
 
 
-    if (document.querySelector("#indexIcons-" + i)) {
-        document.querySelector("#indexIcons-" + i).innerHTML = imageIndexStr;
+    if (document.querySelector("#indexIcons-" + imageCarousels[i])) {
+        document.querySelector("#indexIcons-" + imageCarousels[i]).innerHTML = imageIndexStr;
     }
-});
+};
 
 /*
 
