@@ -174,48 +174,145 @@ function selectEdit(num) {
 });
 
 
+let whichTarget = [];
+[].forEach.call(document.querySelectorAll("[data-videos]"), (e, i) => {
 
 
 
 
+    whichTarget.push(e.dataset.videos);
 
 
+});
 
 
+for (let i = 0; i < whichTarget.length; i++) {
+    document.querySelector("[data-videos='" + whichTarget[i] + "']").innerHTML = `<div><iframe src="https://www.youtube.com/embed/${data[activeBusiness].info[whichTarget[i]].media[0]}" title="YouTube video player" class="mediaYt" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen=""></iframe></div>
+                            
+                            
+                    <label class="sliderIndexCounter  text-center">Video:<span id="videoCounter-${whichTarget[i]}">1</span></label>
+                     <ul class="carouselIndexParent txtCenter" data-carousel="video" id="videoIndexIcon-${whichTarget[i]}"></ul>
+                    <ul class="inline txtCenter block">
+                        <li>
+                            <button type="button" class="btn btn-secondary mr-2 "
+                                onClick="carouselMove('previous','video',${whichTarget[i]})">
+                                <i class="fas fa-arrow-circle-left"></i> Video</button>
+
+                            <button type="button" class="btn btn-secondary ml-2 "
+                                onClick="carouselMove('next','video',${whichTarget[i]})">Video <i class="fas fa-arrow-circle-right"></i>
+                            </button>
+                        </li>
+
+                    </ul>
+                
+`;
 
 
-let ytVideos = [];
+    let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
 
+    // if (data[activeBusiness].info[whichTarget[i]].media[0].indexOf(".") === -1 && data[activeBusiness].info[whichTarget[i]].media[0].indexOf("/") === -1) {
+    let activeVideo = 0;
+    let videoIndexStr = ""
+    if (document.getElementById("videoCounter-" + whichTarget[i])) {
 
-
-
-/*START VIDEO CAROUSEL
-let activeVideo = 0;
-let videoIndexStr = ""
-if (document.getElementById("videoCounter")) {
-    document.getElementById("videoCounter").innerHTML = activeVideo + 1 + "/" + parseInt(ytVideos.length);
-}
-
-for (let i = 0; i < ytVideos.length; i++) {
-    let standardClass = 'sliderIndex';
-    if (i === 0) {
-        standardClass = 'sliderIndex active';
+        document.getElementById("videoCounter-" + whichTarget[i]).innerHTML = activeVideo + 1 + "/" + parseInt(ytVideos.length);
+    } else {
+        console.log(`videoCounter-whichTarget[i]: ` + whichTarget[i])
     }
-    videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + i + "' onClick='setVideoActive(" + i + ")' ></li>";
+
+    for (let j = 0; j < ytVideos.length; j++) {
+        let standardClass = 'sliderIndex';
+        if (j === 0) {
+            standardClass = 'sliderIndex active';
+        }
+        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + ")' ></li>";
+    }
+    if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
+        document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
+    } else {
+        console.log(`whichTarget[i]: ` + whichTarget[i])
+    }
+
+
+    //  }
+
 }
-if (document.querySelector("[data-carousel='video']")) {
-    document.querySelector("[data-carousel='video']").innerHTML = videoIndexStr;
+
+for (let i = 0; i < whichTarget.length; i++) {
+
+
+
+    let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
+    console.log(`ytVideos: ` + ytVideos)
+
+    // if (data[activeBusiness].info[whichTarget[i]].media[0].indexOf(".") === -1 && data[activeBusiness].info[whichTarget[i]].media[0].indexOf("/") === -1) {
+    let activeVideo = 0;
+    let videoIndexStr = ""
+    if (document.getElementById("videoCounter-" + whichTarget[i])) {
+
+        document.getElementById("videoCounter-" + whichTarget[i]).innerHTML = activeVideo + 1 + "/" + parseInt(ytVideos.length);
+    } else {
+        console.log(`videoCounter-whichTarget[i]: ` + whichTarget[i])
+    }
+
+    for (let j = 0; j < ytVideos.length; j++) {
+        let standardClass = 'sliderIndex';
+        if (j === 0) {
+            standardClass = 'sliderIndex active';
+        }
+        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + ")' ></li>";
+    }
+    if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
+        document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
+    } else {
+        console.log(`whichTarget[i]: ` + whichTarget[i])
+    }
+
+
+    //  }
+
 }
+
+
+
+/*
+mediaYt
+videoCounter-${i}
+videoIndexIcon-${i}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*START VIDEO CAROUSEL*/
+
+
 
 function setVideoActive(num, mediaNum) {
     activeVideo = num;
-    [].forEach.call(document.querySelectorAll(".sliderIndex[data-video]"), (e) => {
+    [].forEach.call(document.querySelectorAll("#videoIndexIcon-" + mediaNum + " .sliderIndex[data-video]"), (e) => {
         e.classList.remove("active");
     });
-    document.querySelector("[data-video='" + num + "']").classList.add("active");
-    document.querySelector("#mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[num])
-    document.getElementById("videoCounter").innerHTML = (1 + num) + "/" + parseInt(ytVideos.length);
-}*/
+    document.querySelector("#videoIndexIcon-" + mediaNum + " [data-video='" + num + "']").classList.add("active");
+    document.querySelector("[data-videos='" + mediaNum + "'] .mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[num])
+    document.getElementById("videoCounter-" + mediaNum).innerHTML = (1 + num) + "/" + parseInt(ytVideos.length);
+}
+/*
+mediaYt
+videoCounter-${i}
+videoIndexIcon-${i}
+*/
 ///START IMAGE CAROUSEL
 
 [].forEach.call(document.querySelectorAll("[data-carousel='image']"), (e, i) => {
@@ -291,15 +388,30 @@ mageCarouselTarget-${i}
 imageCounter-${i}
 indexIcons-${i}
 
+
+/*
+mediaYt
+videoCounter-${i}
+videoIndexIcon-${i}
+
 */
 
 function carouselMove(direction, media, mediaNum) {
     let activeImage = 0;
+    let activeVideo = 0;
 
     if (media === "image" && document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image) {
         activeImage = document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image;
 
     }
+
+
+    if (media === "video" && document.querySelector("#videoIndexIcon-" + mediaNum + " .sliderIndex.active").dataset.video) {
+        activeVideo = document.querySelector("#videoIndexIcon-" + mediaNum + " .sliderIndex.active").dataset.video;
+
+    }
+
+    console.log("activeVideo: " + activeVideo + " media: " + media);
 
 
     if (media === "image") {

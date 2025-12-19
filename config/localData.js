@@ -491,8 +491,8 @@ const data = [{
         {
             section: 4,
             title: "Our First Gig",
-            HTMLcontent: `<div data-equalize="0" class="col-md-6"><iframe class='img-fluid centerAuto img-thumbnail mediaComponent' data-type='video'  src='https://www.youtube.com/embed/i2uIVHyiwgI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><div data-equalize="0" class="col-md-6"><p>Rock and roll (often written as rock &amp; roll, rock 'n' roll, or rock 'n roll) is a genre of popular music that originated and evolved in the United States during the late 1940s and early 1950s from musical styles such as gospel, jump blues, jazz, boogie woogie, rhythm and blues, and country music.[4] While elements of what was to become rock and roll can be heard in blues records from the 1920s and in country records of the 1930s, the genre did not acquire its name until 1954.</p></div>`,
-            media: []
+            HTMLcontent: `<div data-equalize="0" class="col-md-6" data-videos='4'></div><div data-equalize="0" class="col-md-6"><p>Rock and roll (often written as rock &amp; roll, rock 'n' roll, or rock 'n roll) is a genre of popular music that originated and evolved in the United States during the late 1940s and early 1950s from musical styles such as gospel, jump blues, jazz, boogie woogie, rhythm and blues, and country music.[4] While elements of what was to become rock and roll can be heard in blues records from the 1920s and in country records of the 1930s, the genre did not acquire its name until 1954.</p></div>`,
+            media: ["bk-oTa4p4Fc", "CUpOMSJ1MdU", "jomAUAP976Y", "LDTXoJ5Xzrc", "64ftDUeUrQY", "gAIwWeFURPk", "QEJpZjg8GuA", "muOBrsm5DPc", "TTYnHr_-wcY", "iSQlLQqMP6I", "88bMVbx1dzM", "Kqx9blbYDB0", "a1UsUocKkgY", "ViTCO0mFkUo", "OqqKQP2sb4Q", "9thv_D5yoQw", "yACZtGCFvzU", "Ni82f1-cAXg", "ZdFFL9wNsaY", "gzLPa6NbcrE", "eOL2t7yyods", "Opxhh9Oh3rg", "S7TUe5w6RHo", "gJrSWXFXvlE", "awzOq_XKA_o", "dKcOTr7N4lE", "WdGQsBDSEpk", "qYJFkJXL2YY", "9hfqVrVIsyU", "J6yABdjYzLk", "5N_kWAxLPkM", "SAaVgY3twJs", "_TedFmvfCYo", "vtkwWe61uYw", "AdtLxlttrHg", "md75n8cyenA", "gh8HX4itF_w", "vmziIVL3jro", "P1ww1IXRfTA", "8Are9dDbW24", "1mFf5B5qEX4", "zEZ0DttCS9s", "zvrRCBlTmDE", "cLUD_NGE370", "WAzxy5yy6gs", "X73Eiad0JmM", "upJ43DEOg9c", "XDBWjfUgaR8"]
         }
     ],
     "events": [
@@ -529,7 +529,7 @@ const data = [{
 
 
 
-let activeBusiness = 1;
+let activeBusiness = 2;
 
 let teasersHTML = "";
 
@@ -554,7 +554,7 @@ document.getElementById("teasers").innerHTML = teasersHTML;
 document.getElementById("mobileTeasers").innerHTML = mobileTeasersHTML;
 //document.querySelector("[data-content='0']").innerHTML = data[activeBusiness].teasers[0].teaserTitle;
 //document.querySelector(".contentTxt[data-scroll='0']").innerHTML = "<h1>" + data[activeBusiness].about[0].aboutTitle + "</h1>" + data[activeBusiness].about[0].aboutText;
-console.log("data[activeBusiness].contact.address: " + data[activeBusiness].contact.address)
+
 document.querySelector(".contactMap").setAttribute("src", encodeURI(`https://www.google.com/maps/embed/v1/place?key=${data[activeBusiness].map1 + data[activeBusiness].map2}&q=${data[activeBusiness].contact.address}`));
 
 /* START INFO */
