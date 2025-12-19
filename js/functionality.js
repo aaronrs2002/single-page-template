@@ -1,4 +1,71 @@
 
+
+let activeBusiness = 1;
+let teasersHTML = "";
+let mobileTeasersHTML = "";
+for (let i = 0; i < data[activeBusiness].teasers.length; i++) {
+    teasersHTML = teasersHTML + `<div class="col-md-3 teaser"><div class="card mb-4 shadow-sm img-thumbnail" onClick="scrollWindow('${i}')" onMouseOver="teaserTransitionOver(${i})"
+                        onMouseOut="teaserTransitionOut(${i})">
+                            <div class="focusTeaser animated center fadeIn fadeOut" data-focus="${i}">
+                                <h1>${data[activeBusiness].teasers[i].focusTeaser}</h1>
+                            </div>
+                            <div class="mainTease animated fadeIn" data-teaser="${i}">
+                                <h5>${data[activeBusiness].teasers[i].teaserTitle}</h5>
+                                <p>${data[activeBusiness].teasers[i].teaserText}</p>
+                            </div><img data-img="${i}" class="animated"
+                                src="${data[activeBusiness].teasers[i].teaserImg}">
+                        </div></div>`;
+
+    mobileTeasersHTML = mobileTeasersHTML + ` <li class="nav-item"><strong class="nav-link">${data[activeBusiness].teasers[i].teaserTitle}</strong></li>`
+}
+
+document.getElementById("teasers").innerHTML = teasersHTML;
+document.getElementById("mobileTeasers").innerHTML = mobileTeasersHTML;
+document.querySelector(".contactMap").setAttribute("src", encodeURI(`https://www.google.com/maps/embed/v1/place?key=${data[activeBusiness].map1 + data[activeBusiness].map2}&q=${data[activeBusiness].contact.address}`));
+
+/* START INFO */
+let pgSections = [];
+let sectionTitles = [];
+let infoTarget = "";
+for (let i = 0; i < data[activeBusiness].info.length; i++) {
+    document.querySelector(".hide[data-section='" + data[activeBusiness].info[i].section + "']").classList.remove("hide");
+    let infoIntro = "";
+    infoIntro = `<div class="container"><div class="row"><div class="col-md-12"><h2 class="txtCenter">${data[activeBusiness].info[i].title}</h2><hr></div></div></div>`;
+    document.querySelector("[data-section='" + data[activeBusiness].info[i].section + "'] .target").innerHTML = infoIntro + `<div class="container"><div class="row equalize1">` + data[activeBusiness].info[i].HTMLcontent + `</div></div>`;
+
+}
+
+/*START EVENTS*/
+eventBtListHTML = "";
+for (let i = 0; i < data[activeBusiness].events.length; i++) {
+    let isActive = "";
+    if (i === 0) {
+        isActive = "active";
+    }
+    eventBtListHTML = eventBtListHTML + `<button data-num="${i}" onClick="selectEvent(${i})" class="list-group-item list-group-item-action ${isActive}">${data[activeBusiness].events[i].title}</button>`;
+}
+document.getElementById("eventTitleBtListTarget").innerHTML = eventBtListHTML;
+
+function selectEvent(whichEvent) {
+    [].forEach.call(document.querySelectorAll("#eventTitleBtListTarget button[data-num]"), (e) => {
+        if (e.dataset.num == whichEvent) {
+            e.classList.add("active");
+        } else {
+            e.classList.remove("active");
+        }
+    });
+
+    document.getElementById("eventTitleTarget").innerHTML = data[activeBusiness].events[whichEvent].title;
+    document.getElementById("eventDateTimeTarget").innerHTML = data[activeBusiness].events[whichEvent].dateTime;
+    document.getElementById("eventAddressTarget").innerHTML = data[activeBusiness].events[whichEvent].address;
+    document.getElementById("eventContactTarget").innerHTML = data[activeBusiness].events[whichEvent].contact;
+    document.getElementById("eventDetailsTarget").innerHTML = data[activeBusiness].events[whichEvent].details;
+    document.getElementById("eventMap").setAttribute("src", `https://www.google.com/maps/embed/v1/place?key=${data[activeBusiness].map1 + data[activeBusiness].map2}&q=${data[activeBusiness].events[whichEvent].address}`);
+    //AIzaSyBxvGBPN_lRhoYskabk_lZ5FAo4GIowU6I
+}
+selectEvent(0);
+
+
 [].forEach.call(document.querySelectorAll("[data-title]"), (e) => {
     e.innerHTML = data[activeBusiness].title;
 });
@@ -47,35 +114,15 @@ if (document.getElementById("jumbotronLead")) {
 
 
 
-
 /*START TEASERS ANIMATION*/
-
-/*import React, { Component } from "react";
-
-class MainFocus extends Component {
-    constructor() {
-        super();
-        this.state = {
-            selectEdit: "focusTeaser",
-            editVal: "",
-        };
-
-        this.teaserTransitionOver = this.teaserTransitionOver.bind(this);
-        this.teaserTransitionOut = this.teaserTransitionOut.bind(this);
-        this.selectEdit = this.selectEdit.bind(this);
-    }
-*/
-
 
 let selectEditVar = "focusTeaser";
 let editVal = "";
-// componentDidMount() {
 setTimeout(function () {
     document.querySelector(".mainFocusBg").classList.remove("hide");
     document.querySelector(".mainFocusBg").classList.add("animated");
     document.querySelector(".mainFocusBg").classList.add("fadeIn");
 }, 100);
-//  }
 
 function teaserTransitionOver(whichTeaser) {
     document
@@ -121,33 +168,15 @@ function selectEdit(num) {
     let changeThis = document.querySelector(
         ".selectEdit[data-edit='" + num + "']"
     ).value;
-
-    //this.setState({
     selectEditVar = changeThis;
-    //  });
 }
-
-
-
 /* END MAIN FOCUS*/
-
-
-
-
-
-
-
-
-
 let imageCarousels = [];
-
 [].forEach.call(document.querySelectorAll("[data-imgs"), (e) => {
     imageCarousels.push(e.dataset.imgs);
 });
 
 for (let i = 0; i < imageCarousels.length; i++) {
-    /* <div  style="background-image: url('${data[activeBusiness].info[i].media[0]}')" class="img-fluid"  id="imageCarouselTarget-${i}" ></div>    */
-
     let showMultiple = "hide";
     if (data[activeBusiness].info[imageCarousels[i]].media.length > 1) {
         showMultiple = "";
@@ -177,18 +206,10 @@ for (let i = 0; i < imageCarousels.length; i++) {
 `
 };
 
-
 let whichTarget = [];
 [].forEach.call(document.querySelectorAll("[data-videos]"), (e, i) => {
-
-
-
-
     whichTarget.push(e.dataset.videos);
-
-
 });
-
 
 for (let i = 0; i < whichTarget.length; i++) {
     document.querySelector("[data-videos='" + whichTarget[i] + "']").innerHTML = `<div><iframe src="https://www.youtube.com/embed/${data[activeBusiness].info[whichTarget[i]].media[0]}" title="YouTube video player" class="mediaYt" frameborder="0"
@@ -209,14 +230,8 @@ for (let i = 0; i < whichTarget.length; i++) {
                             </button>
                         </li>
 
-                    </ul>
-                
-`;
-
-
+                    </ul>`;
     let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
-
-    // if (data[activeBusiness].info[whichTarget[i]].media[0].indexOf(".") === -1 && data[activeBusiness].info[whichTarget[i]].media[0].indexOf("/") === -1) {
     let activeVideo = 0;
     let videoIndexStr = ""
     if (document.getElementById("videoCounter-" + whichTarget[i])) {
@@ -225,7 +240,6 @@ for (let i = 0; i < whichTarget.length; i++) {
     } else {
         console.log(`videoCounter-whichTarget[i]: ` + whichTarget[i])
     }
-
     for (let j = 0; j < ytVideos.length; j++) {
         let standardClass = 'sliderIndex';
         if (j === 0) {
@@ -238,19 +252,10 @@ for (let i = 0; i < whichTarget.length; i++) {
     } else {
         console.log(`whichTarget[i]: ` + whichTarget[i])
     }
-
-
-    //  }
-
 }
 
 for (let i = 0; i < whichTarget.length; i++) {
-
-
-
     let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
-
-    // if (data[activeBusiness].info[whichTarget[i]].media[0].indexOf(".") === -1 && data[activeBusiness].info[whichTarget[i]].media[0].indexOf("/") === -1) {
     let activeVideo = 0;
     let videoIndexStr = ""
     if (document.getElementById("videoCounter-" + whichTarget[i])) {
@@ -272,36 +277,8 @@ for (let i = 0; i < whichTarget.length; i++) {
     } else {
         console.log(`whichTarget[i]: ` + whichTarget[i])
     }
-
-
-    //  }
-
 }
-
-
-
-/*
-mediaYt
-videoCounter-${i}
-videoIndexIcon-${i}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*START VIDEO CAROUSEL*/
-
-
-
 function setVideoActive(num, mediaNum) {
     let ytVideos = data[activeBusiness].info[mediaNum].media;
     activeVideo = num;
@@ -312,31 +289,15 @@ function setVideoActive(num, mediaNum) {
     document.querySelector("[data-videos='" + mediaNum + "'] .mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[num])
     document.getElementById("videoCounter-" + mediaNum).innerHTML = (1 + num) + "/" + parseInt(ytVideos.length);
 }
-/*
-mediaYt
-videoCounter-${i}
-videoIndexIcon-${i}
-*/
+
 ///START IMAGE CAROUSEL
-
 for (let i = 0; i < imageCarousels.length; i++) {
-
-    console.log("imageCarousels: " + imageCarousels);
-
-
     imageAddresses = data[activeBusiness].info[imageCarousels[i]].media;
-    /*for (let j = 0; j < data[activeBusiness].info[i].media.length; j++) {
-         imageAddresses.push(data[activeBusiness].info[i].media[j]);
-         console.log("data[activeBusiness].info[i].media[j]): " + JSON.stringify(data[activeBusiness].info[i].media[j]));
-     }*/
-
-    console.log("imageAddresses: " + imageAddresses);
     let activeImage = 0;
     let imageIndexStr = "";
     if (document.getElementById("imageCounter-" + imageCarousels[i])) {
         document.getElementById("imageCounter-" + imageCarousels[i]).innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length) + " - " + imageAddresses[activeImage].substring(imageAddresses[activeImage].lastIndexOf("/"), imageAddresses[0].indexOf("."));
     }
-
     for (let j = 0; j < imageAddresses.length; j++) {
         let standardClass = 'sliderIndex';
         if (j === 0) {
@@ -344,35 +305,14 @@ for (let i = 0; i < imageCarousels.length; i++) {
         }
         imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + imageCarousels[i] + ")' ></li>";
     }
-
-
-
     if (document.querySelector("#indexIcons-" + imageCarousels[i])) {
         document.querySelector("#indexIcons-" + imageCarousels[i]).innerHTML = imageIndexStr;
     }
 };
 
-/*
-
-
-/*start image carousels
-
-imageCarouselTarget-${i}
-imageCounter-${i}
-indexIcons-${i}
-*/
-
-
-
-
-
 function setImageActive(num, mediaNum) {
-
-
     let imageAddresses = [];
-
     imageAddresses = data[activeBusiness].info[mediaNum].media;
-
     console.log("num: " + num + " - mediaNum: " + mediaNum);
     activeImage = num;
     [].forEach.call(document.querySelectorAll("#indexIcons-" + mediaNum + " .sliderIndex[data-image]"), (e) => {
@@ -383,55 +323,22 @@ function setImageActive(num, mediaNum) {
     document.getElementById("imageCarouselTarget-" + mediaNum).setAttribute("src", imageAddresses[num]);
     document.getElementById("imageCarouselTarget-" + mediaNum).style.backgroundImage = "url('" + imageAddresses[num] + "')";
 }
-/*
-try {
-    document.querySelector("#mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[0])
-} catch (error) {
-    console.log("No videos: " + error);
-}
-
-mageCarouselTarget-${i}
-imageCounter-${i}
-indexIcons-${i}
-
-
-/*
-mediaYt
-videoCounter-${i}
-videoIndexIcon-${i}
-
-*/
 
 function carouselMove(direction, media, mediaNum) {
     let activeImage = 0;
     let activeVideo = 0;
     let ytVideos = []
-
     if (media === "image" && document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image) {
         activeImage = document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image;
-
     }
-
-
     if (media === "video" && document.querySelector("#videoIndexIcon-" + mediaNum + " .sliderIndex.active").dataset.video) {
         activeVideo = document.querySelector("#videoIndexIcon-" + mediaNum + " .sliderIndex.active").dataset.video;
-
     }
-
-    console.log("activeVideo: " + activeVideo + " media: " + media);
-
-
     if (media === "image") {
         imageAddresses = data[activeBusiness].info[mediaNum].media;
-
-
     } else {
         ytVideos = data[activeBusiness].info[mediaNum].media;
     }
-
-
-
-
     let videoListLength = parseInt(ytVideos.length);
     let imageListLength = parseInt(imageAddresses.length);
     if (direction === "next") {
@@ -470,16 +377,9 @@ function carouselMove(direction, media, mediaNum) {
                 setImageActive(activeImage - 1, mediaNum);
             }
         }
-
     }
 }
 setImageActive(0, 0);
-
-
-
-
-
-
 /*START NAVIGATION*/
 function scrollWindow(num) {
     document
@@ -487,17 +387,11 @@ function scrollWindow(num) {
         .scrollIntoView({ behavior: "smooth" });
 
 }
-
 /*START BLOG RSS*/
-
 let blogData = "Default blog data";
 let activePost = 0;
 let blog = [];
-
 function viewPosts(direction) {
-    console.log("viePosts: drection: " + direction);
-
-
     const blogLength = blog.length;
     if (blogLength > 0) {
         document.getElementById("blogSection").classList.remove("hide");
@@ -519,10 +413,8 @@ function viewPosts(direction) {
             }
         }
     }
-
     document.querySelector("[data-activepost]").innerHTML = (Number(activePost) + 1);
     document.querySelector("[data-blogmax").innerHTML = blogLength;
-
     document.getElementById("activeBlogTitle").innerHTML = blog[activePost].title;
     document.getElementById("activeBlogPubDate").innerHTML = blog[activePost].pubDate;
     document.getElementById("activeBlogDescription").innerHTML = blog[activePost].description;
@@ -535,7 +427,6 @@ function viewPosts(direction) {
             .classList.add("fadeIn");
     }
 }
-
 
 async function getBlog(url) {
     try {
