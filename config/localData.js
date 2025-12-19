@@ -1,5 +1,4 @@
 const data = [{
-
     title: "FUNDRAISING EXTRAVAGANZA",
     map1: "AIzaSyBxvGBPN_lRhoY",
     map2: "skabk_lZ5FAo4GIowU6I",
@@ -316,57 +315,7 @@ const data = [{
         }
     ],
 },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {
-
     title: "The Rockers",
     map1: "AIzaSyBxvGBPN_lRhoY",
     map2: "skabk_lZ5FAo4GIowU6I",
@@ -408,9 +357,7 @@ const data = [{
     ],
     rss: "",
     "jumbotronHeading": "Some Band",
-
     "jumbotronImg": "https://lh3.googleusercontent.com/pw/ACtC-3e7X5T0euimrhv3rHvmLkN1V1xCEeHSHHuUDSllwOvZhqBVlPd1xxdDb7D47L8NbKUrlwpU7tSpKUGZ8t1yn3eIA7gV5V6nA1hs2YOQSnyKcKKK6odeBtqnEq-2JVyHUrO_khHyqsLcWdust6k_U9fggw=w1600-h546-no?authuser=0",
-
     "jumbotronLead": "Rock music is a broad genre of popular music that originated as \"rock and roll\" in the United States in the early 1950s.",
     "teasers": [
         {
@@ -442,10 +389,7 @@ const data = [{
             "teaserTitle": "Call Out"
         }
     ],
-
     info: [
-
-
         {
             section: 0,
             title: "Our Sound",
@@ -460,10 +404,6 @@ const data = [{
             media: [
                 "https://lh3.googleusercontent.com/pw/ACtC-3dQJ4nt9RkFNtk5Gg0x29zKsJEky9OnsOnj4uG8-YS8XTKZFxRrG9lREPGmM4l67J6tsae4KXqYx7CwNrrodtawBIJykNW2Par1iCt0_GmpBTgUrP4Of-_7IMfrz2lM9Z4tedlk9QCMFOFhFkX-vO8jFA=w447-h460-no?authuser=0"]
         },
-
-
-
-
         {
             section: 2,
             title: "Joshua",
@@ -471,8 +411,6 @@ const data = [{
             media: [
                 "https://lh3.googleusercontent.com/pw/ACtC-3d_LD1-MGBsBI6jl0q6GiWhTIxiM199GZ_Kg4GUm69S_7VrVeq6bChizvCdGquJW9DD1BkknUMTZ4XcOJ3ThleapIQeQSZ-1qIJf-zCMD2XJYdUAIc6JQmFkwnHAXoFHnK4y1SnH9wvJl6NSeNobd5Nsg=w1097-h746-no?authuser=0"]
         },
-
-
         {
             section: 3,
             title: "Mike",
@@ -480,13 +418,6 @@ const data = [{
             media: [
                 "https://lh3.googleusercontent.com/pw/ACtC-3d8fH1wENUkq6iHTvw_FoWfeGoJklQ2SPaT0Hp8o5hzh3snOpeO5cN8Dm62IDq6yToGAyHuemBdBJsi0wulsWHMtOlQ5Pn02ofWTkP0H6cccXmMynxml3sRqLF7DAicCvciW_Zp89MpbADrbCjTRD14Dw=w1078-h721-no?authuser=0"]
         },
-
-
-
-
-
-
-
 
         {
             section: 4,
@@ -518,21 +449,13 @@ const data = [{
             "title": "Chicago, IL"
         }
     ],
-
-
 },
 ];
 
 
 
-
-
-
-
-let activeBusiness = 2;
-
+let activeBusiness = 0;
 let teasersHTML = "";
-
 let mobileTeasersHTML = "";
 for (let i = 0; i < data[activeBusiness].teasers.length; i++) {
     teasersHTML = teasersHTML + `<div class="col-md-3 teaser"><div class="card mb-4 shadow-sm img-thumbnail" onClick="scrollWindow('${i}')" onMouseOver="teaserTransitionOver(${i})"
@@ -552,9 +475,6 @@ for (let i = 0; i < data[activeBusiness].teasers.length; i++) {
 
 document.getElementById("teasers").innerHTML = teasersHTML;
 document.getElementById("mobileTeasers").innerHTML = mobileTeasersHTML;
-//document.querySelector("[data-content='0']").innerHTML = data[activeBusiness].teasers[0].teaserTitle;
-//document.querySelector(".contentTxt[data-scroll='0']").innerHTML = "<h1>" + data[activeBusiness].about[0].aboutTitle + "</h1>" + data[activeBusiness].about[0].aboutText;
-
 document.querySelector(".contactMap").setAttribute("src", encodeURI(`https://www.google.com/maps/embed/v1/place?key=${data[activeBusiness].map1 + data[activeBusiness].map2}&q=${data[activeBusiness].contact.address}`));
 
 /* START INFO */
@@ -564,15 +484,10 @@ let infoTarget = "";
 for (let i = 0; i < data[activeBusiness].info.length; i++) {
     document.querySelector(".hide[data-section='" + data[activeBusiness].info[i].section + "']").classList.remove("hide");
     let infoIntro = "";
-
     infoIntro = `<div class="container"><div class="row"><div class="col-md-12"><h2 class="txtCenter">${data[activeBusiness].info[i].title}</h2><hr></div></div></div>`;
-
     document.querySelector("[data-section='" + data[activeBusiness].info[i].section + "'] .target").innerHTML = infoIntro + `<div class="container"><div class="row equalize1">` + data[activeBusiness].info[i].HTMLcontent + `</div></div>`;
 
-
 }
-
-
 
 /*START EVENTS*/
 eventBtListHTML = "";
@@ -581,14 +496,9 @@ for (let i = 0; i < data[activeBusiness].events.length; i++) {
     if (i === 0) {
         isActive = "active";
     }
-
     eventBtListHTML = eventBtListHTML + `<button data-num="${i}" onClick="selectEvent(${i})" class="list-group-item list-group-item-action ${isActive}">${data[activeBusiness].events[i].title}</button>`;
-
 }
-
 document.getElementById("eventTitleBtListTarget").innerHTML = eventBtListHTML;
-
-
 
 function selectEvent(whichEvent) {
     [].forEach.call(document.querySelectorAll("#eventTitleBtListTarget button[data-num]"), (e) => {

@@ -399,6 +399,7 @@ videoIndexIcon-${i}
 function carouselMove(direction, media, mediaNum) {
     let activeImage = 0;
     let activeVideo = 0;
+    let ytVideos = []
 
     if (media === "image" && document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image) {
         activeImage = document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image;
