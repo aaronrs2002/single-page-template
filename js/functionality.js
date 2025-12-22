@@ -172,17 +172,22 @@ function selectEdit(num) {
 }
 /* END MAIN FOCUS*/
 let imageCarousels = [];
-[].forEach.call(document.querySelectorAll("[data-imgs"), (e) => {
-    imageCarousels.push(e.dataset.imgs);
-});
+let whichTarget = [];
+[].forEach.call(document.querySelectorAll("[data-media"), (e, i) => {
+    if (data[activeBusiness].info[i].media[0].indexOf("/") !== -1) {
+        imageCarousels.push(e.dataset.media);
+    } else {
+        whichTarget.push(e.dataset.media);
+    }
 
+});
 for (let i = 0; i < imageCarousels.length; i++) {
     let showMultiple = "hide";
     if (data[activeBusiness].info[imageCarousels[i]].media.length > 1) {
         showMultiple = "";
     }
-
-    document.querySelector("[data-imgs='" + imageCarousels[i] + "']").innerHTML = `
+    if (data[activeBusiness].info[imageCarousels[i]].media[0].indexOf("/") !== -1) {
+        document.querySelector("[data-media='" + imageCarousels[i] + "']").innerHTML = `
                 <div><img src="${data[activeBusiness].info[imageCarousels[i]].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${imageCarousels[i]}" /></div>     
                 <span class="${showMultiple}">            
                 <label class="sliderIndexCounter">Image:<span id="imageCounter-${imageCarousels[i]}"></span></label>
@@ -203,16 +208,13 @@ for (let i = 0; i < imageCarousels.length; i++) {
 
                     </ul>
                     </span>
-`
+`;
+    }
 };
 
-let whichTarget = [];
-[].forEach.call(document.querySelectorAll("[data-videos]"), (e, i) => {
-    whichTarget.push(e.dataset.videos);
-});
-
 for (let i = 0; i < whichTarget.length; i++) {
-    document.querySelector("[data-videos='" + whichTarget[i] + "']").innerHTML = `<div><iframe src="https://www.youtube.com/embed/${data[activeBusiness].info[whichTarget[i]].media[0]}" title="YouTube video player" class="mediaYt" frameborder="0"
+    if (data[activeBusiness].info[whichTarget[i]].media[0].indexOf("/") === -1) {
+        document.querySelector("[data-media='" + whichTarget[i] + "']").innerHTML = `<div><iframe src="https://www.youtube.com/embed/${data[activeBusiness].info[whichTarget[i]].media[0]}" title="YouTube video player" class="mediaYt" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen=""></iframe></div>
                             
@@ -231,14 +233,13 @@ for (let i = 0; i < whichTarget.length; i++) {
                         </li>
 
                     </ul>`;
+    }
     let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
     let activeVideo = 0;
     let videoIndexStr = ""
     if (document.getElementById("videoCounter-" + whichTarget[i])) {
 
         document.getElementById("videoCounter-" + whichTarget[i]).innerHTML = activeVideo + 1 + "/" + parseInt(ytVideos.length);
-    } else {
-        console.log(`videoCounter-whichTarget[i]: ` + whichTarget[i])
     }
     for (let j = 0; j < ytVideos.length; j++) {
         let standardClass = 'sliderIndex';
@@ -249,8 +250,6 @@ for (let i = 0; i < whichTarget.length; i++) {
     }
     if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
         document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
-    } else {
-        console.log(`whichTarget[i]: ` + whichTarget[i])
     }
 }
 
@@ -259,12 +258,8 @@ for (let i = 0; i < whichTarget.length; i++) {
     let activeVideo = 0;
     let videoIndexStr = ""
     if (document.getElementById("videoCounter-" + whichTarget[i])) {
-
         document.getElementById("videoCounter-" + whichTarget[i]).innerHTML = activeVideo + 1 + "/" + parseInt(ytVideos.length);
-    } else {
-        console.log(`videoCounter-whichTarget[i]: ` + whichTarget[i])
     }
-
     for (let j = 0; j < ytVideos.length; j++) {
         let standardClass = 'sliderIndex';
         if (j === 0) {
@@ -274,8 +269,6 @@ for (let i = 0; i < whichTarget.length; i++) {
     }
     if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
         document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
-    } else {
-        console.log(`whichTarget[i]: ` + whichTarget[i])
     }
 }
 /*START VIDEO CAROUSEL*/
@@ -286,7 +279,7 @@ function setVideoActive(num, mediaNum) {
         e.classList.remove("active");
     });
     document.querySelector("#videoIndexIcon-" + mediaNum + " [data-video='" + num + "']").classList.add("active");
-    document.querySelector("[data-videos='" + mediaNum + "'] .mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[num])
+    document.querySelector("[data-media='" + mediaNum + "'] .mediaYt").setAttribute("src", "https://www.youtube.com/embed/" + ytVideos[num])
     document.getElementById("videoCounter-" + mediaNum).innerHTML = (1 + num) + "/" + parseInt(ytVideos.length);
 }
 
@@ -296,14 +289,14 @@ for (let i = 0; i < imageCarousels.length; i++) {
     let activeImage = 0;
     let imageIndexStr = "";
     if (document.getElementById("imageCounter-" + imageCarousels[i])) {
-        document.getElementById("imageCounter-" + imageCarousels[i]).innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length) + " - " + imageAddresses[activeImage].substring(imageAddresses[activeImage].lastIndexOf("/"), imageAddresses[0].indexOf("."));
+        document.getElementById("imageCounter-" + imageCarousels[i]).innerHTML = activeImage + 1 + "/" + parseInt(imageAddresses.length);
     }
     for (let j = 0; j < imageAddresses.length; j++) {
         let standardClass = 'sliderIndex';
         if (j === 0) {
             standardClass = 'sliderIndex active';
         }
-        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + imageCarousels[i] + ")' ></li>";
+        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-media='" + j + "' onClick='setImageActive(" + j + "," + imageCarousels[i] + ")' ></li>";
     }
     if (document.querySelector("#indexIcons-" + imageCarousels[i])) {
         document.querySelector("#indexIcons-" + imageCarousels[i]).innerHTML = imageIndexStr;
@@ -313,12 +306,11 @@ for (let i = 0; i < imageCarousels.length; i++) {
 function setImageActive(num, mediaNum) {
     let imageAddresses = [];
     imageAddresses = data[activeBusiness].info[mediaNum].media;
-    console.log("num: " + num + " - mediaNum: " + mediaNum);
     activeImage = num;
-    [].forEach.call(document.querySelectorAll("#indexIcons-" + mediaNum + " .sliderIndex[data-image]"), (e) => {
+    [].forEach.call(document.querySelectorAll("#indexIcons-" + mediaNum + " .sliderIndex[data-media]"), (e) => {
         e.classList.remove("active");
     });//"#indexIcons-" + i +"[data-image]"
-    document.querySelector("#indexIcons-" + mediaNum + " [data-image='" + num + "']").classList.add("active");
+    document.querySelector("#indexIcons-" + mediaNum + " [data-media='" + num + "']").classList.add("active");
     document.getElementById("imageCounter-" + mediaNum).innerHTML = (1 + num) + "/" + parseInt(imageAddresses.length);
     document.getElementById("imageCarouselTarget-" + mediaNum).setAttribute("src", imageAddresses[num]);
     document.getElementById("imageCarouselTarget-" + mediaNum).style.backgroundImage = "url('" + imageAddresses[num] + "')";
@@ -327,6 +319,7 @@ function setImageActive(num, mediaNum) {
 function carouselMove(direction, media, mediaNum) {
     let activeImage = 0;
     let activeVideo = 0;
+    let imageAddresses = [];
     let ytVideos = []
     if (media === "image" && document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image) {
         activeImage = document.querySelector("#indexIcons-" + mediaNum + " .sliderIndex.active").dataset.image;
@@ -436,7 +429,6 @@ async function getBlog(url) {
             throw new Error(`error: ${response.status}`);
         }
         const data = await response.json();
-        console.log("JSON.stringify(data): " + JSON.stringify(data))
         return data;
     } catch (error) {
         document.getElementById("blogSection").remove();
@@ -450,7 +442,6 @@ async function start() {
     let phpRelayAddress = "https://mechanized-aesthetics.net/php-relays/any-restaurant-blog-address.php?q=";
     if (urlStart.length === 0) {
         document.getElementById("blogSection").remove();
-        console.log("urlStart.length: " + urlStart.length);
     } else {
         try {
             blog = await getBlog(phpRelayAddress + urlStart);
