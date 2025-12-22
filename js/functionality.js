@@ -171,6 +171,8 @@ function selectEdit(num) {
     selectEditVar = changeThis;
 }
 /* END MAIN FOCUS*/
+
+/*START MEDIA CAROUSELS*/
 let imageCarousels = [];
 let whichTarget = [];
 [].forEach.call(document.querySelectorAll("[data-media"), (e, i) => {
@@ -234,25 +236,9 @@ for (let i = 0; i < whichTarget.length; i++) {
 
                     </ul>`;
     }
-    let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
-    let activeVideo = 0;
-    let videoIndexStr = ""
-    if (document.getElementById("videoCounter-" + whichTarget[i])) {
-
-        document.getElementById("videoCounter-" + whichTarget[i]).innerHTML = activeVideo + 1 + "/" + parseInt(ytVideos.length);
-    }
-    for (let j = 0; j < ytVideos.length; j++) {
-        let standardClass = 'sliderIndex';
-        if (j === 0) {
-            standardClass = 'sliderIndex active';
-        }
-        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + "," + whichTarget[i] + ")' ></li>";
-    }
-    if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
-        document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
-    }
 }
 
+/*START VIDEO CAROUSEL*/
 for (let i = 0; i < whichTarget.length; i++) {
     let ytVideos = data[activeBusiness].info[whichTarget[i]].media;
     let activeVideo = 0;
@@ -271,7 +257,8 @@ for (let i = 0; i < whichTarget.length; i++) {
         document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
     }
 }
-/*START VIDEO CAROUSEL*/
+
+
 function setVideoActive(num, mediaNum) {
     let ytVideos = data[activeBusiness].info[mediaNum].media;
     activeVideo = num;
@@ -372,7 +359,6 @@ function carouselMove(direction, media, mediaNum) {
         }
     }
 }
-//setImageActive(0, 0);
 /*START NAVIGATION*/
 function scrollWindow(num) {
     document
