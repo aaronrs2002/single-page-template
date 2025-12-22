@@ -296,7 +296,7 @@ for (let i = 0; i < imageCarousels.length; i++) {
         if (j === 0) {
             standardClass = 'sliderIndex active';
         }
-        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-media='" + j + "' onClick='setImageActive(" + j + "," + imageCarousels[i] + ")' ></li>";
+        imageIndexStr = imageIndexStr + "<li class='" + standardClass + "' data-image='" + j + "' onClick='setImageActive(" + j + "," + imageCarousels[i] + ")' ></li>";
     }
     if (document.querySelector("#indexIcons-" + imageCarousels[i])) {
         document.querySelector("#indexIcons-" + imageCarousels[i]).innerHTML = imageIndexStr;
@@ -307,10 +307,10 @@ function setImageActive(num, mediaNum) {
     let imageAddresses = [];
     imageAddresses = data[activeBusiness].info[mediaNum].media;
     activeImage = num;
-    [].forEach.call(document.querySelectorAll("#indexIcons-" + mediaNum + " .sliderIndex[data-media]"), (e) => {
+    [].forEach.call(document.querySelectorAll("#indexIcons-" + mediaNum + " .sliderIndex[data-image]"), (e) => {
         e.classList.remove("active");
     });//"#indexIcons-" + i +"[data-image]"
-    document.querySelector("#indexIcons-" + mediaNum + " [data-media='" + num + "']").classList.add("active");
+    document.querySelector("#indexIcons-" + mediaNum + " [data-image='" + num + "']").classList.add("active");
     document.getElementById("imageCounter-" + mediaNum).innerHTML = (1 + num) + "/" + parseInt(imageAddresses.length);
     document.getElementById("imageCarouselTarget-" + mediaNum).setAttribute("src", imageAddresses[num]);
     document.getElementById("imageCarouselTarget-" + mediaNum).style.backgroundImage = "url('" + imageAddresses[num] + "')";
