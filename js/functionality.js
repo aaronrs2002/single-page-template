@@ -1,6 +1,19 @@
 
 
 let activeBusiness = 1;
+let url = window.location;
+(url + "?")
+    .split("?")[1]
+    .split("&")
+    .forEach(function (pair) {
+        pair = (pair + "=").split("=").map(decodeURIComponent);
+        if (pair[0].length) {
+            if (pair[0] === "activeBusiness") {
+                activeBusiness = pair[1];
+            }
+        }
+    });
+//END params
 let teasersHTML = "";
 let mobileTeasersHTML = "";
 for (let i = 0; i < data[activeBusiness].teasers.length; i++) {
