@@ -246,7 +246,7 @@ for (let i = 0; i < whichTarget.length; i++) {
         if (j === 0) {
             standardClass = 'sliderIndex active';
         }
-        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + ")' ></li>";
+        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + "," + whichTarget[i] + ")' ></li>";
     }
     if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
         document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
@@ -265,7 +265,7 @@ for (let i = 0; i < whichTarget.length; i++) {
         if (j === 0) {
             standardClass = 'sliderIndex active';
         }
-        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + ")' ></li>";
+        videoIndexStr = videoIndexStr + "<li class='" + standardClass + "' data-video='" + j + "' onClick='setVideoActive(" + j + "," + whichTarget[i] + ")' ></li>";
     }
     if (document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i])) {
         document.querySelector("[data-carousel='video']#videoIndexIcon-" + whichTarget[i]).innerHTML = videoIndexStr;
