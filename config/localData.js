@@ -270,7 +270,8 @@ const data = [{
                 "https://lh3.googleusercontent.com/pw/ACtC-3c1dTNHTwYferDDVDqGIlM8UFApIWchYGjfGqEHdfgoQEdR1trbihPEAjdCDPo8xlX4uwhUyZQAJWHwkccj-juq88QMjlt9q7OplwHRBkMcDeFJvTwf8EA86jGVT1fK5_GU6142_-pyDNhR_URTvbSQLg=s535-no?authuser=0",
                 "https://lh3.googleusercontent.com/pw/ACtC-3ftjEJ-vsatiJNYFOWcM-i7r3G7nxiAt1FNLKYnEGcjib4wz_YU-4fTadkLi7PG7E9htRY8Rzcf3yOAQv7erCO-8jrnwi9OLJoXMDa5huoDuR2qB6G34buHQwERBncHdJinagaDWiwDXAg1s2JjTMkp8A=w1111-h741-no?authuser=0",
                 "https://lh3.googleusercontent.com/pw/ACtC-3d5iqqPIw1AaOLaJvwzR6BarSpNoSIvdP1OouNgx7Pi5PPKFD5Ps7OPSikX5jMNlElX16rHrdBpXuCS8W-bM7VXhsPNgwdleKeZGtohlONOjwWgBysbDLlww2P2dSEtQ_9KO2ZDA7KTvzEnEU--9hmCmw=w498-h746-no?authuser=0",
-                "https://lh3.googleusercontent.com/pw/ACtC-3eVoVtNj9fVE-oKxRyded1yY62up1k8UMQPvhUsKUt7k2603-QNq9HcDl0NIPYPhhIP3d1aq70ovDITBMs6YUQj6ywScaIMLx09QcYbArt3zme9mREZtUIoQEni1uNpF7cqAQyq3D9Me4dzxduB_J8msw=w1113-h746-no?authuser=0"
+                "https://lh3.googleusercontent.com/pw/ACtC-3eVoVtNj9fVE-oKxRyded1yY62up1k8UMQPvhUsKUt7k2603-QNq9HcDl0NIPYPhhIP3d1aq70ovDITBMs6YUQj6ywScaIMLx09QcYbArt3zme9mREZtUIoQEni1uNpF7cqAQyq3D9Me4dzxduB_J8msw=w1113-h746-no?authuser=0",
+                "img/momEllis.jpg"
             ]
         }
         ,

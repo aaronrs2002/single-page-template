@@ -203,14 +203,14 @@ for (let i = 0; i < imageCarousels.length; i++) {
     }
     if (data[activeBusiness].info[imageCarousels[i]].media[0].indexOf("/") !== -1) {
         document.querySelector("[data-media='" + imageCarousels[i] + "']").innerHTML = `
-                <div><img src="${data[activeBusiness].info[imageCarousels[i]].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${imageCarousels[i]}" /></div>     
-                <span class="${showMultiple}">            
-                <label class="sliderIndexCounter">Image:<span id="imageCounter-${imageCarousels[i]}"></span></label>
-
-                    <ul class="carouselIndexParent txtCenter" data-carousel="image" id="indexIcons-${imageCarousels[i]}"></ul>
-
-                 
-                    <ul class="inline txtCenter block">
+        <div>  
+        <div class='row'>
+        <div class="col-md-4"></div>
+         <div class="col-md-4">  <ul class="carouselIndexParent" data-carousel="image" id="indexIcons-${imageCarousels[i]}"></ul></div>
+          <div class="col-md-4"></div>
+        </div>
+        
+             <ul class="inline txtCenter block pb-3">
                         <li>
                             <button type="button" class="btn btn-secondary mr-2 "
                                 onClick="carouselMove('previous','image',${imageCarousels[i]})">
@@ -221,7 +221,18 @@ for (let i = 0; i < imageCarousels.length; i++) {
                             </button>
                         </li>
 
-                    </ul>
+                </ul>
+
+                  
+                
+                </div>
+                <div><img src="${data[activeBusiness].info[imageCarousels[i]].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${imageCarousels[i]}" /></div>     
+                <span class="${showMultiple}">            
+                <label class="sliderIndexCounter">Image:<span id="imageCounter-${imageCarousels[i]}"></span></label>
+
+
+                 
+
                     </span>
 `;
     }
