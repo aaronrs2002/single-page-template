@@ -202,7 +202,8 @@ for (let i = 0; i < imageCarousels.length; i++) {
         showMultiple = "";
     }
     if (data[activeBusiness].info[imageCarousels[i]].media[0].indexOf("/") !== -1) {
-        document.querySelector("[data-media='" + imageCarousels[i] + "']").innerHTML = `
+        console.log("data[activeBusiness].info[imageCarousels[i]].media.length: " + data[activeBusiness].info[imageCarousels[i]].media.length)
+        document.querySelector("[data-media='" + imageCarousels[i] + "']").innerHTML = (data[activeBusiness].info[imageCarousels[i]].media.length === 1 ? `<div></div>` : `
         <div>  
         <div class='row'>
         <div class="col-md-4"></div>
@@ -225,8 +226,8 @@ for (let i = 0; i < imageCarousels.length; i++) {
 
                   
                 
-                </div>
-                <div><img src="${data[activeBusiness].info[imageCarousels[i]].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${imageCarousels[i]}" /></div>     
+                </div>`) +
+            `<div><img src="${data[activeBusiness].info[imageCarousels[i]].media[0]}"  class="img-fluid"  id="imageCarouselTarget-${imageCarousels[i]}" /></div>     
                 <span class="${showMultiple}">            
                 <label class="sliderIndexCounter">Image:<span id="imageCounter-${imageCarousels[i]}"></span></label>
 
