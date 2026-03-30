@@ -206,9 +206,9 @@ for (let i = 0; i < imageCarousels.length; i++) {
         document.querySelector("[data-media='" + imageCarousels[i] + "']").innerHTML = (data[activeBusiness].info[imageCarousels[i]].media.length === 1 ? `<div></div>` : `
         <div>  
         <div class='row'>
-        <div class="col-md-4"></div>
-         <div class="col-md-4">  <ul class="carouselIndexParent" data-carousel="image" id="indexIcons-${imageCarousels[i]}"></ul></div>
-          <div class="col-md-4"></div>
+       
+         <div class="col-md-12 d-flex justify-content-center">  <ul class="carouselIndexParent" data-carousel="image" id="indexIcons-${imageCarousels[i]}"></ul></div>
+      
         </div>
         
              <ul class="inline txtCenter block pb-3">
