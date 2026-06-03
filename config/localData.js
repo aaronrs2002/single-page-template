@@ -130,7 +130,7 @@ const data = [{
     map1: "AIzaSyBxvGBPN_lRhoY",
     map2: "skabk_lZ5FAo4GIowU6I",
     contact: {
-        address: "Scottsdale, AZ 85260",
+        address: "1 Cardinals Dr, Glendale, AZ 85305",
         addressIcon: "fa-home",
         phone: "480.455.5555",
         phoneIcon: "fa-phone",
